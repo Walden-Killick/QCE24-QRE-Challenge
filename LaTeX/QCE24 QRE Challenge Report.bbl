@@ -1,0 +1,147 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{harrow2009quantum}{article}{}
+      \name{author}{3}{}{%
+        {{hash=6bc7275eb8de2a3404fd3f07e6c21a2a}{%
+           family={Harrow},
+           familyi={H\bibinitperiod},
+           given={Aram\bibnamedelima W},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=3765d849007f662dc14f33a696aa6a7b}{%
+           family={Hassidim},
+           familyi={H\bibinitperiod},
+           given={Avinatan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=501c0933970931f080455b29b43e560d}{%
+           family={Lloyd},
+           familyi={L\bibinitperiod},
+           given={Seth},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {APS}%
+      }
+      \strng{namehash}{3b3176c8c71f2d0502e9279289094069}
+      \strng{fullhash}{3b3176c8c71f2d0502e9279289094069}
+      \strng{bibnamehash}{3b3176c8c71f2d0502e9279289094069}
+      \strng{authorbibnamehash}{3b3176c8c71f2d0502e9279289094069}
+      \strng{authornamehash}{3b3176c8c71f2d0502e9279289094069}
+      \strng{authorfullhash}{3b3176c8c71f2d0502e9279289094069}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical review letters}
+      \field{number}{15}
+      \field{title}{Quantum algorithm for linear systems of equations}
+      \field{volume}{103}
+      \field{year}{2009}
+      \field{pages}{150502}
+      \range{pages}{1}
+    \endentry
+    \entry{gilyen2019quantum}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=e79510f17f3a4f8641d9edfc32894def}{%
+           family={Gilyén},
+           familyi={G\bibinitperiod},
+           given={András},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8067b002984ccb4128440e25a166509c}{%
+           family={Su},
+           familyi={S\bibinitperiod},
+           given={Yuan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9392ec6c19f799fdccb939e713e413f0}{%
+           family={Low},
+           familyi={L\bibinitperiod},
+           given={Guang\bibnamedelima Hao},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=9906b78ec80183f9ac5008ae54ce7088}{%
+           family={Wiebe},
+           familyi={W\bibinitperiod},
+           given={Nathan},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{243f89680d184a044d5ff99cb4b62c13}
+      \strng{fullhash}{2318e6c69d33e8d0424ac51d525f90a5}
+      \strng{bibnamehash}{243f89680d184a044d5ff99cb4b62c13}
+      \strng{authorbibnamehash}{243f89680d184a044d5ff99cb4b62c13}
+      \strng{authornamehash}{243f89680d184a044d5ff99cb4b62c13}
+      \strng{authorfullhash}{2318e6c69d33e8d0424ac51d525f90a5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 51st Annual ACM SIGACT Symposium on Theory of Computing}
+      \field{title}{Quantum singular value transformation and beyond: exponential improvements for quantum matrix arithmetics}
+      \field{year}{2019}
+      \field{pages}{193\bibrangedash 204}
+      \range{pages}{12}
+    \endentry
+    \entry{martyn2021grand}{article}{}
+      \name{author}{4}{}{%
+        {{hash=1e213c4838ce7e5836944d420f7bee53}{%
+           family={Martyn},
+           familyi={M\bibinitperiod},
+           given={John\bibnamedelima M},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=ab0b5518cabb2b233d70c522c8860a6f}{%
+           family={Rossi},
+           familyi={R\bibinitperiod},
+           given={Zane\bibnamedelima M},
+           giveni={Z\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=905e8c0fa44b64a9e0953cc50b4fb416}{%
+           family={Tan},
+           familyi={T\bibinitperiod},
+           given={Andrew\bibnamedelima K},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=415ddff2f58b25977b1a2dedf18f4501}{%
+           family={Chuang},
+           familyi={C\bibinitperiod},
+           given={Isaac\bibnamedelima L},
+           giveni={I\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {APS}%
+      }
+      \strng{namehash}{a263d3399ad8a27536ab23f16a2e5cf8}
+      \strng{fullhash}{18e5ccc3bf875ba8213f535a004dc611}
+      \strng{bibnamehash}{a263d3399ad8a27536ab23f16a2e5cf8}
+      \strng{authorbibnamehash}{a263d3399ad8a27536ab23f16a2e5cf8}
+      \strng{authornamehash}{a263d3399ad8a27536ab23f16a2e5cf8}
+      \strng{authorfullhash}{18e5ccc3bf875ba8213f535a004dc611}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PRX quantum}
+      \field{number}{4}
+      \field{title}{Grand unification of quantum algorithms}
+      \field{volume}{2}
+      \field{year}{2021}
+      \field{pages}{040203}
+      \range{pages}{1}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
