@@ -1,6 +1,6 @@
-\documentclass[11pt, twocolumn]{article}
+\documentclass[10pt, twocolumn]{article}
 
-\usepackage[a4paper, margin=1in]{geometry}
+\usepackage[a4paper, margin=0.5in]{geometry}
 \usepackage{amsfonts}
 \usepackage{amsthm}
 \usepackage{amsmath}
@@ -21,6 +21,24 @@
 \usepackage{hyperref}
 \usetikzlibrary{quantikz}
 
+\DeclareMathOperator{\lcm}{lcm}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{postulate}[theorem]{Postulate}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem*{claim}{Claim}
+
+
 \usepackage[backend=biber, sorting=none]{biblatex}
 \bibliography{bibliography}
 
@@ -32,14 +50,65 @@
 \maketitle
 
 \begin{abstract}
-	We perform resource estimation for solving systems of linear equations involving banded circulant matrices using the quantum singular value transformation algorithm.
+	We produce physical resource estimates for solving systems of linear equations involving banded circulant matrices using the quantum singular value transformation algorithm.
 \end{abstract}
 
 \section{Introduction}
 
-Since the breakthrough 2009 algorithm of Harrow, Hassidim, and Lloyd (HHL algorithm), it has been well-known that for sparse, well-conditioned matrices, quantum computers are capable of solving systems of linear equations (SLEs) exponentially faster than the best classical algorithms \cite{harrow2009quantum}. To date, the HHL algorithm is still the most commonly cited quantum algorithm for solving SLEs, both in academic research and for potential industry applications. On the other hand, subsequent improvements to the HHL algorithm have not received the same attention despite achieving super complexity and being arguably conceptually simpler \cite{martyn2021grand}. In this project, we consider the use of the quantum singular value transformation \cite{gilyen2019quantum} in solving systems of linear equations and investigate the physical resource requirements this entails.
+Since the breakthrough 2009 algorithm of Harrow, Hassidim, and Lloyd (HHL algorithm), it has been well-known that for sparse, well-conditioned matrices, quantum computers are capable of solving systems of linear equations (SLEs) exponentially faster than the best classical algorithms \cite{harrow2009quantum}. To date, the HHL algorithm is still the most commonly cited quantum algorithm for solving SLEs, both in academic research and for industry applications. On the other hand, subsequent improvements to the HHL algorithm have not received the same attention despite achieving super complexity and being arguably conceptually simpler. In this project, we consider the use of the quantum singular value transformation (QSVT) \cite{gilyen2019quantum, martyn2021grand} in solving systems of linear equations and investigate the physical resource requirements this entails.
 
 All code used to generate the results in this report can  be found at \href{https://github.com/Walden-Killick/QCE24-QRE-Challenge}{https://github.com/Walden-Killick/QCE24-QRE-Challenge}.
+
+\section{Preliminary}
+
+\subsection{Problem definition}
+
+Given a quantum state $\ket{b}$ and an efficient classical description of a sparse matrix $A$, the quantum linear system of equations (QSLE) problem is the problem of preparing the state $\ket{x} = A^{-1} \ket{b}$. Broadly speaking, the primary challenges in any QSLE algorithm are (1) accessing $A$ in a quantum circuit, and (2) performing (an approximation of) the transformation $A \mapsto A^{-1}$. The HHL algorithm \cite{harrow2009quantum} achieves these goals using a sparse Hamiltonian simulation subroutine \cite{berry2007efficient} and quantum phase estimation \cite{kitaev1995quantum}, respectively. By contrast, QSVT utilises the fundamentally different techniques of block encoding \cite{gilyen2019quantum} and quantum signal processing \cite{low2017optimal} and achieves an exponentially improved dependence on the target precision as well as a lesser improvement with respect to the condtion number. We briefly review these techniques in the following subsection.
+
+\subsection{Matrix inversion by QSVT}
+
+To access $A$ in a quantum circuit, QSVT relies on quantum oracles which efficiently encode both the non-zero structure and non-zero elements of $A$, which are defined rigorously as follows.
+
+\begin{definition}[Sparse access oracles \cite{camps2203explicit}]
+	\label{def::sparse_access_oracles}
+	Let $A$ be a $2^n \times 2^n$ $s$-sparse matrix. Let $c(j,l)$ be a function which returns the row index of the $l$-th non-zero matrix element in the $j$-th column of $A$. The sparse access oracles $O_c$ and $O_A$ for $A$ are unitary operators defined as
+	\[
+		O_c \ket{l}\ket{j} = \ket{l}\ket{c(j, l)}
+	\]
+	and
+	\[
+		O_A \ket{0}\ket{l}\ket{j} = \left( A_{c(j, l), l} \ket{0} + \sqrt{1 - \abs{A_{c(j, l), l}}^2 } \ket{1} \right) \ket{l} \ket{j}.
+	\]
+\end{definition}
+
+We should note that in this formalism, $O_A$ also implicitly encodes the non-zero structure of $A$ by calling $c(j, l)$; however, for certain sufficiently well-structured matrices such as those considered in this project, this is not prohibitive.
+
+The following informal theorem states that one can construct a unitary matrix which directly contains (a scaled version of) $A$ as a submatrix (block).
+
+\begin{theorem}[Block encoding sparse matrices \cite{gilyen2019quantum}]
+	Let $A, O_c, O_A$ be as in Definition \ref{def::sparse_access_oracles}. Using one call to each of $O_c$ and $O_A$, we can construct a unitary matrix $U_A$ for which the upper left $2^n \times 2^n$ submatrix is equal to $A/s$.
+\end{theorem}
+
+The final ingredient in matrix inversion by QSVT is to transform the singular values of $A/s$ as $x \mapsto 1/x$. QSVT cannot perform this transformation exactly, but can perform almost-arbitrary polynomial transformations \cite{sunderhauf2023generalized} and thus approximate $1/x$ to arbitrary precision.
+
+\subsection{Banded circulant matrices}
+
+\begin{definition}[Circulant matrix]
+	A circulant matrix is a matrix in which each row is equal to the previous row but with each element shifted one place to the right.
+\end{definition}
+
+\begin{definition}[Banded circulant matrix]
+	A circulant matrix is banded if only the diagonal, subdiagonal, and superdiagonal elements are non-zero.
+	\[
+		\begin{bmatrix}
+			\alpha & \gamma & 0 & \cdots & \beta \\
+			\beta & \alpha & \gamma & \cdots & 0 \\
+			0 & \beta & \alpha & \cdots & 0 \\
+			\vdots & \vdots & \vdots & \ddots & \vdots \\
+			\gamma & 0 & 0 & \cdots & \alpha
+		\end{bmatrix}
+	\]
+\end{definition}
 
 \newpage
 
