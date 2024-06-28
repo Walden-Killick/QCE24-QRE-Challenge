@@ -71,7 +71,7 @@ To access $A$ in a quantum circuit, QSVT relies on quantum oracles which efficie
 
 \begin{definition}[Sparse access oracles \cite{camps2203explicit}]
 	\label{def::sparse_access_oracles}
-	Let $A$ be a $2^n \times 2^n$ $s$-sparse matrix. Let $c(j,l)$ be a function which returns the row index of the $l$-th non-zero matrix element in the $j$-th column of $A$. The sparse access oracles $O_c$ and $O_A$ for $A$ are unitary operators defined as
+	Let $A$ be a $2^n \times 2^n$ $s$-sparse matrix. Let $c(j,l)$ be a function which returns the row index of the $l$-th non-zero matrix element in the $j$-th column of $A$. The sparse access oracles $O_c$ and $O_A$ for $A$ are the unitary operators defined as
 	\[
 		O_c \ket{l}\ket{j} = \ket{l}\ket{c(j, l)}
 	\]
@@ -85,13 +85,20 @@ We should note that in this formalism, $O_A$ also implicitly encodes the non-zer
 
 The following informal theorem states that one can construct a unitary matrix which directly contains (a scaled version of) $A$ as a submatrix (block).
 
-\begin{theorem}[Block encoding sparse matrices \cite{gilyen2019quantum}]
-	Let $A, O_c, O_A$ be as in Definition \ref{def::sparse_access_oracles}. Using one call to each of $O_c$ and $O_A$, we can construct a unitary matrix $U_A$ for which the upper left $2^n \times 2^n$ submatrix is equal to $A/s$.
+\begin{theorem}[Block-encoding sparse matrices \cite{gilyen2019quantum, camps2203explicit}]
+	\label{thm:block_encoding_sparse_matrices}
+	Let $A, O_c, O_A$ be as in Definition \ref{def::sparse_access_oracles}. Using one call to each of $O_c$ and $O_A$, we can construct a larger unitary matrix $U_A$ for which the upper left $2^n \times 2^n$ block is equal to $A/s$.
 \end{theorem}
 
 The final ingredient in matrix inversion by QSVT is to transform the singular values of $A/s$ as $x \mapsto 1/x$. QSVT cannot perform this transformation exactly, but can perform almost-arbitrary polynomial transformations \cite{sunderhauf2023generalized} and thus approximate $1/x$ to arbitrary precision.
 
+\begin{theorem}[Matrix inversion by QSVT \cite{gilyen2019quantum}]
+	Let $A$ be a sparse matrix with condition number $\kappa$ and let $U_A$ block-encode $A$ as in Theorem \ref{thm:block_encoding_sparse_matrices}. Using $O(\kappa \log(\kappa / \varepsilon))$ calls to $U_A$ and $U_A^\dag$, we can construct a unitary which block-encodes $A^{-1}$ to within accuracy $\varepsilon$.
+\end{theorem}
+
 \subsection{Banded circulant matrices}
+
+To construct polynomial-size oracles $O_c$ and $O_A$, $A$ must be well-structured in some way. For this project, we consider banded circulant matrices due to the known explicit and simple construction of their sparse access oracles \cite{camps2203explicit}.
 
 \begin{definition}[Circulant matrix]
 	A circulant matrix is a matrix in which each row is equal to the previous row but with each element shifted one place to the right.
