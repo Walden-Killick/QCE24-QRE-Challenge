@@ -1013,6 +1013,21 @@ files = [
 diagrams = ["jinja2", "railroad-diagrams"]
 
 [[package]]
+name = "pyqsp"
+version = "0.1.6"
+description = "Generate phase angles for quantum signal processing algorithms"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pyqsp-0.1.6.tar.gz", hash = "sha256:2862eeffd7e12f2b955fc25b586927c03c0652e572d4c107ab7534eedbfaf3ec"},
+]
+
+[package.dependencies]
+matplotlib = "*"
+numpy = ">1.19.1"
+scipy = "*"
+
+[[package]]
 name = "python-dateutil"
 version = "2.9.0.post0"
 description = "Extensions to the standard Python datetime module"
@@ -1420,4 +1435,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "b2004263756575107e073d253e9387ffd29c87eb236a50c7e970d8fb33e4dc18"
+content-hash = "003532cbd5b6840c653c35fde2052788a5f90266979ce561402912330bfb888a"
