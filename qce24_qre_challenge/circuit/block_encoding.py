@@ -31,9 +31,9 @@ class BlockEncoding(Circuit):
         control_reg_size = self._value_oracle.num_qubits - 1
         output_reg_size = self._location_oracle.num_qubits - control_reg_size
 
-        value_reg = QuantumRegister(1)
-        control_reg = QuantumRegister(control_reg_size)
-        output_reg = QuantumRegister(output_reg_size)
+        value_reg = QuantumRegister(1, name='val')
+        control_reg = QuantumRegister(control_reg_size, name='ctrl')
+        output_reg = QuantumRegister(output_reg_size, name='out')
 
         block_encoding_circuit = QuantumCircuit(value_reg, control_reg, output_reg)
 

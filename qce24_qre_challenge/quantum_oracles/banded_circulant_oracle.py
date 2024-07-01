@@ -69,8 +69,8 @@ class BandedCirculantOracle(SparseOracle):
         c_l_shift_gate = loc_shift_gate(loc_reg_num_qubits, 'l').control(1)
         c_r_shift_gate = loc_shift_gate(loc_reg_num_qubits, 'r').control(1)
 
-        control_reg = QuantumRegister(2)
-        output_reg = QuantumRegister(loc_reg_num_qubits)
+        control_reg = QuantumRegister(2, name='ctrl')
+        output_reg = QuantumRegister(loc_reg_num_qubits, name='out')
 
         loc_oracle_circuit = QuantumCircuit(control_reg, output_reg)
         loc_oracle_circuit.append(c_l_shift_gate, [0] + list(range(2, loc_reg_num_qubits + 2)))
@@ -99,8 +99,8 @@ class BandedCirculantOracle(SparseOracle):
         c_theta_1 = RYGate(theta_1).control(2, ctrl_state='01')
         c_theta_2 = RYGate(theta_2).control(2, ctrl_state='10')
 
-        value_reg = QuantumRegister(1)
-        control_reg = QuantumRegister(2)
+        value_reg = QuantumRegister(1, name='val')
+        control_reg = QuantumRegister(2, name='ctrl')
 
         val_oracle_circuit = QuantumCircuit(value_reg, control_reg)
         val_oracle_circuit.append(c_theta_0, [1,2,0])
