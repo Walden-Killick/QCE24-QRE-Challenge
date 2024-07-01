@@ -26,8 +26,11 @@ class BandedCirculantMatrix(SparseMatrix):
         Raises
         ------
         ValueError
-            If the number of coefficients given is not exactly three.
+            If the size is less than three or the number of coefficients given is not 
+            exactly three.
         """
+        if size < 3:
+            raise ValueError(f"Size argument ({size}) must be at least 3.")
         if len(coefficients) != 3:
             raise ValueError("The number of coefficients to initialise a banded circulant " + 
                              f"matrix must be exactly 3. {len(coefficients)} were given.")
