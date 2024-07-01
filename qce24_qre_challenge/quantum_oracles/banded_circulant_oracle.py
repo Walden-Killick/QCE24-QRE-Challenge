@@ -86,7 +86,7 @@ class BandedCirculantOracle(SparseOracle):
         QuantumCircuit
             Quantum oracle O_A.
         """
-        coefficients = self._banded_circulant_matrix.get_coefficients()
+        coefficients = self._banded_circulant_matrix.coefficients
         alpha = coefficients[1]
         beta = coefficients[0]
         gamma = coefficients[2]

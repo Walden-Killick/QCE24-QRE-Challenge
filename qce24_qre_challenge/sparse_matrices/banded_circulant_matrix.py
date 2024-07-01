@@ -35,7 +35,8 @@ class BandedCirculantMatrix(SparseMatrix):
         self._coefficients = coefficients
         self._sparsity = 3
 
-    def get_coefficients(self) -> list[float]:
+    @property
+    def coefficients(self) -> list[float]:
         """Return the coefficients defining the banded circulant matrix.
 
         Returns
