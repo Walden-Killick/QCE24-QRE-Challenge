@@ -8,6 +8,8 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 qiskit = "^1.1.1"
+matplotlib = "^3.9.0"
+pylatexenc = "^2.10"
 
 
 [tool.poetry.group.dev.dependencies]
