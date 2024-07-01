@@ -50,6 +50,17 @@ class BlockEncoding(Circuit):
         return block_encoding_circuit
     
     @property
+    def num_qubits(self) -> int:
+        """Get the total number of qubits used in constructing the block encoding.
+
+        Returns
+        -------
+        int
+            Number of qubits.
+        """
+        return self._location_oracle.num_qubits + 1
+    
+    @property
     def num_ancillas(self) -> int:
         """Get the number of ancilla qubits used in constructing the block encoding.
 
