@@ -5,8 +5,9 @@ Walden Killick
 """
 from qiskit import QuantumCircuit, QuantumRegister
 from qce24_qre_challenge.quantum_oracles import SparseOracle
+from .circuit import Circuit
 
-class BlockEncoding():
+class BlockEncoding(Circuit):
     """Class for creating block-encoding circuits from sparse-access oracles."""
     def __init__(self, sparse_oracle: SparseOracle) -> None:
         """Initialise the 'BlockEncoding'.
