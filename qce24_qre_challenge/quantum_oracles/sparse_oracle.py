@@ -12,7 +12,7 @@ class SparseOracle(ABC):
 
     @abstractmethod
     def location_oracle(self) -> QuantumCircuit:
-        """Construct the quantum oracle which locates the non-zero entry indices.
+        """Construct the quantum oracle which locates the non-zero matrix entries.
 
         Returns
         -------
