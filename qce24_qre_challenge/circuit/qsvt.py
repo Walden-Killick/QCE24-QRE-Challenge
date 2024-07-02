@@ -52,7 +52,7 @@ class QSVT(Circuit):
         phase_angles : list[float]
             Phase angles determining the polynomial transformation.
         initial_state : np.ndarray, optional
-            Initial state to prepare in the output register, by default None.
+            Initial state to prepare in the output register.
         """
         self._block_encoding = block_encoding
         self._phase_angles = phase_angles
