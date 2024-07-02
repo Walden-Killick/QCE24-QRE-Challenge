@@ -5,6 +5,9 @@ Walden Killick
 """
 from qiskit import QuantumCircuit, QuantumRegister
 from qiskit.circuit.library.standard_gates import XGate
+from qiskit.circuit.library import StatePreparation
+import numpy as np
+from qiskit.quantum_info import Statevector
 from qce24_qre_challenge.circuit import BlockEncoding
 from .circuit import Circuit
 
@@ -34,7 +37,12 @@ def signal_processing_circuit(angle: float, num_ancillas: int) -> QuantumCircuit
 
 
 class QSVT(Circuit):
-    def __init__(self, block_encoding: BlockEncoding, phase_angles: list[float]) -> None:
+    def __init__(
+            self, 
+            block_encoding: BlockEncoding, 
+            phase_angles: list[float],
+            initial_state: np.ndarray = None
+            ) -> None:
         """Initialise the 'QSVT'.
 
         Parameters
@@ -46,6 +54,7 @@ class QSVT(Circuit):
         """
         self._block_encoding = block_encoding
         self._phase_angles = phase_angles
+        self._initial_state = initial_state
     def create_circuit(self) -> QuantumCircuit:
         """Create the QSVT circuit
 
@@ -66,6 +75,14 @@ class QSVT(Circuit):
         output_reg = QuantumRegister(total_qubits-num_ancillas-1, name='out')
 
         qsvt_circuit = QuantumCircuit(processing_reg, ancilla_reg, output_reg)
+
+        if self._initial_state is not None:
+            state_prep_gate = StatePreparation(
+                params=Statevector(self._initial_state), 
+                label='Load b'
+                )
+            qsvt_circuit.append(state_prep_gate, output_reg)
+
         qsvt_circuit.h(processing_reg)
 
         parity = 0
