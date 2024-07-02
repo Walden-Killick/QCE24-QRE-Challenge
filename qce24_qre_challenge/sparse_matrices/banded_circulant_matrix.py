@@ -4,6 +4,7 @@ Cambridge Consultants 2024
 Walden Killick
 """
 from qce24_qre_challenge.sparse_matrices import SparseMatrix
+import numpy as np
 
 
 class BandedCirculantMatrix(SparseMatrix):
@@ -12,16 +13,17 @@ class BandedCirculantMatrix(SparseMatrix):
     For a definition of banded circulant matrices, see 
     https://doi.org/10.1137/22M1484298.
     """
-    def __init__(self, size: int, coefficients: list[float]) -> None:
+    def __init__(self, size: int, coefficients: list[float] = None) -> None:
         """Initialise the 'BandedCirculantMatrix'.
 
         Parameters
         ----------
         size : int
             Dimension (number of columns) of the matrix.
-        coefficients : list[float]
+        coefficients : list[float], optional
             The three coefficients defining the subdiagonal, diagonal, and superdiagonal
-            matrix elements, respectively.
+            matrix elements, respectively. If left blank coefficients will be generated
+            uniformly at random from the interval (0, 1].
 
         Raises
         ------
@@ -31,11 +33,14 @@ class BandedCirculantMatrix(SparseMatrix):
         """
         if size < 3:
             raise ValueError(f"Size argument ({size}) must be at least 3.")
-        if len(coefficients) != 3:
+        if coefficients is not None:
+            self._coefficients = coefficients
+        else:
+            self._coefficients = [ 1 - np.random.uniform(0, 1) for _ in range(3)]
+        if len(self.coefficients) != 3:
             raise ValueError("The number of coefficients to initialise a banded circulant " + 
-                             f"matrix must be exactly 3. {len(coefficients)} were given.")
+                             f"matrix must be exactly 3. {len(self.coefficients)} were given.")
         self._size = size
-        self._coefficients = coefficients
         self._sparsity = 3
 
     @property
