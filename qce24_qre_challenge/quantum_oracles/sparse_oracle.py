@@ -3,6 +3,7 @@
 Cambridge Consultants 2024
 Walden Killick
 """
+
 from abc import ABC, abstractmethod
 from qiskit import QuantumCircuit
 

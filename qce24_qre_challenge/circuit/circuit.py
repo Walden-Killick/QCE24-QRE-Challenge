@@ -3,12 +3,14 @@
 Cambridge Consultants 2024
 Walden Killick
 """
+
 from abc import ABC, abstractmethod
 from qiskit import QuantumCircuit
 
 
 class Circuit(ABC):
-    """Base class for quantum circuit classes"""
+    """Base class for quantum circuit classes."""
+
     @abstractmethod
     def create_circuit() -> QuantumCircuit:
         """Create the relevant 'QuantumCircuit'.

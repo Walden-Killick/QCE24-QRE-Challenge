@@ -3,6 +3,7 @@
 Cambridge Consultants 2024
 Walden Killick
 """
+
 from .sparse_matrix import SparseMatrix
 from .banded_circulant_matrix import BandedCirculantMatrix
 

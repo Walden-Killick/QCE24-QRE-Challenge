@@ -3,6 +3,7 @@
 Cambridge Consultants 2024
 Walden Killick
 """
+
 from qiskit import QuantumCircuit, QuantumRegister
 from qiskit.circuit.library.standard_gates import XGate
 from qiskit.circuit.library import StatePreparation
@@ -30,19 +31,21 @@ def signal_processing_circuit(angle: float, num_ancillas: int) -> QuantumCircuit
     """
     circuit = QuantumCircuit(num_ancillas + 1)
     n0x_gate = XGate().control(num_ancillas, ctrl_state=0)
-    circuit.append(n0x_gate, reversed(range(num_ancillas+1)))
-    circuit.rz(2*angle, 0)
-    circuit.append(n0x_gate, reversed(range(num_ancillas+1)))
+    circuit.append(n0x_gate, reversed(range(num_ancillas + 1)))
+    circuit.rz(2 * angle, 0)
+    circuit.append(n0x_gate, reversed(range(num_ancillas + 1)))
     return circuit
 
 
 class QSVT(Circuit):
+    """Class for creating QSVT circuits."""
+
     def __init__(
-            self, 
-            block_encoding: BlockEncoding, 
-            phase_angles: list[float],
-            initial_state: np.ndarray = None
-            ) -> None:
+        self,
+        block_encoding: BlockEncoding,
+        phase_angles: list[float],
+        initial_state: np.ndarray = None,
+    ) -> None:
         """Initialise the 'QSVT'.
 
         Parameters
@@ -57,8 +60,9 @@ class QSVT(Circuit):
         self._block_encoding = block_encoding
         self._phase_angles = phase_angles
         self._initial_state = initial_state
+
     def create_circuit(self) -> QuantumCircuit:
-        """Create the QSVT circuit
+        """Create the QSVT circuit.
 
         Returns
         -------
@@ -70,19 +74,18 @@ class QSVT(Circuit):
 
         block_encoding_circuit = self._block_encoding.create_circuit()
         block_encoding_gate = block_encoding_circuit.to_gate()
-        block_encoding_gate.name = 'U_A'
+        block_encoding_gate.name = "U_A"
 
-        processing_reg = QuantumRegister(1, name='rot')
-        ancilla_reg = QuantumRegister(num_ancillas, name='anc')
-        output_reg = QuantumRegister(total_qubits-num_ancillas-1, name='out')
+        processing_reg = QuantumRegister(1, name="rot")
+        ancilla_reg = QuantumRegister(num_ancillas, name="anc")
+        output_reg = QuantumRegister(total_qubits - num_ancillas - 1, name="out")
 
         qsvt_circuit = QuantumCircuit(processing_reg, ancilla_reg, output_reg)
 
         if self._initial_state is not None:
             state_prep_gate = StatePreparation(
-                params=Statevector(self._initial_state), 
-                label='Load b'
-                )
+                params=Statevector(self._initial_state), label="Load b"
+            )
             qsvt_circuit.append(state_prep_gate, output_reg)
 
         qsvt_circuit.h(processing_reg)
@@ -96,10 +99,13 @@ class QSVT(Circuit):
                 qsvt_circuit.append(block_encoding_gate, range(1, total_qubits))
                 parity = 1
             else:
-                qsvt_circuit.append(block_encoding_gate.inverse(), range(1, total_qubits))
+                qsvt_circuit.append(
+                    block_encoding_gate.inverse(), range(1, total_qubits)
+                )
                 parity = 0
         qsvt_circuit.compose(
-            signal_processing_circuit(self._phase_angles[-1], num_ancillas), inplace=True
+            signal_processing_circuit(self._phase_angles[-1], num_ancillas),
+            inplace=True,
         )
         qsvt_circuit.h(0)
 

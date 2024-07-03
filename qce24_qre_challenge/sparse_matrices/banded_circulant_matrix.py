@@ -3,6 +3,7 @@
 Cambridge Consultants 2024
 Walden Killick
 """
+
 from qce24_qre_challenge.sparse_matrices import SparseMatrix
 import numpy as np
 
@@ -10,9 +11,10 @@ import numpy as np
 class BandedCirculantMatrix(SparseMatrix):
     """Class for banded circulant matrices.
 
-    For a definition of banded circulant matrices, see 
+    For a definition of banded circulant matrices, see
     https://doi.org/10.1137/22M1484298.
     """
+
     def __init__(self, size: int, coefficients: list[float] = None) -> None:
         """Initialise the 'BandedCirculantMatrix'.
 
@@ -28,7 +30,7 @@ class BandedCirculantMatrix(SparseMatrix):
         Raises
         ------
         ValueError
-            If the size is less than three or the number of coefficients given is not 
+            If the size is less than three or the number of coefficients given is not
             exactly three.
         """
         if size < 3:
@@ -36,10 +38,12 @@ class BandedCirculantMatrix(SparseMatrix):
         if coefficients is not None:
             self._coefficients = coefficients
         else:
-            self._coefficients = [ 1 - np.random.uniform(0, 1) for _ in range(3)]
+            self._coefficients = [1 - np.random.uniform(0, 1) for _ in range(3)]
         if len(self.coefficients) != 3:
-            raise ValueError("The number of coefficients to initialise a banded circulant " + 
-                             f"matrix must be exactly 3. {len(self.coefficients)} were given.")
+            raise ValueError(
+                "The number of coefficients to initialise a banded circulant "
+                + f"matrix must be exactly 3. {len(self.coefficients)} were given."
+            )
         self._size = size
         self._sparsity = 3
 
@@ -76,8 +80,10 @@ class BandedCirculantMatrix(SparseMatrix):
             If the nonzero entry index is out of bounds.
         """
         if not 0 <= nonzero_entry_index <= self._sparsity - 1:
-            raise ValueError(f"Nonzero entry index ({nonzero_entry_index}) out of bounds " + 
-                             f"(must lie between 0 and {self._sparsity - 1}.)")
+            raise ValueError(
+                f"Nonzero entry index ({nonzero_entry_index}) out of bounds "
+                + f"(must lie between 0 and {self._sparsity - 1}.)"
+            )
 
         return (column_index + nonzero_entry_index - 1) % self._size
 

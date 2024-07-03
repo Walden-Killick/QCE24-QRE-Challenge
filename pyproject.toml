@@ -15,7 +15,31 @@ pyqsp = "^0.1.6"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.4"
+ruff = "^0.5.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+target-version = "py310"
+
+[tool.ruff.lint]
+# Enable flake8 (Pyflakes + pycodestyle), pep8-naming, flake8-bugbear, pylint 
+# and check for unused error suppression 
+select = ["D", "F", "E", "W", "N", "B", "PL", "RUF100"]
+
+# Ignore too many argument errors, and the opinionated flake8-bugbear rules
+ignore = ["PLR0912","PLR0913", "PLR0914", "B901", "B904", "B905", "B909", "PLR2004"]
+
+[tool.ruff.lint.per-file-ignores]
+# Ignore unused imports in these files
+"__init__.py" = ["E402"]
+"**/{tests,docs,tools}/*" = ["E402"]
+
+[tool.ruff.lint.pycodestyle]
+# E501 reports lines that exceed the length of 120 as per original flake8 settings.
+max-line-length = 120
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
