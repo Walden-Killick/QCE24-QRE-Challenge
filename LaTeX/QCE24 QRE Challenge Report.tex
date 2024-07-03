@@ -63,11 +63,11 @@ All code used to generate the results in this report can  be found at \href{http
 
 \subsection{Problem definition}
 
-Given a quantum state $\ket{b}$ and an efficient classical description of a sparse matrix $A$, the quantum linear system of equations (QSLE) problem is the problem of preparing the state $\ket{x} = A^{-1} \ket{b}$. Broadly speaking, the primary challenges in any QSLE algorithm are (1) accessing $A$ in a quantum circuit, and (2) performing (an approximation of) the transformation $A \mapsto A^{-1}$. The HHL algorithm \cite{harrow2009quantum} achieves these goals using a sparse Hamiltonian simulation subroutine \cite{berry2007efficient} and quantum phase estimation \cite{kitaev1995quantum}, respectively. By contrast, QSVT utilises the fundamentally different techniques of block encoding \cite{gilyen2019quantum} and quantum signal processing \cite{low2017optimal} and achieves an exponentially improved dependence on the target precision as well as a lesser improvement with respect to the condtion number. We briefly review these techniques in the following subsection.
+Given a quantum state $\ket{b}$ and an efficient classical description of a sparse matrix $A$, the quantum linear system of equations (QSLE) problem is the problem of preparing the state $\ket{x} = A^{-1} \ket{b}$. Broadly speaking, the primary challenges in any QSLE algorithm are (1) accessing $A$ in a quantum circuit, and (2) performing (approximately) the transformation $x \mapsto 1/x$ on $A$'s eigenvalues. The HHL algorithm \cite{harrow2009quantum} achieves these goals using a sparse Hamiltonian simulation subroutine \cite{berry2007efficient} and quantum phase estimation \cite{kitaev1995quantum}, respectively. By contrast, QSVT utilises the fundamentally different techniques of block encoding \cite{gilyen2019quantum} and quantum signal processing \cite{low2017optimal} and achieves an exponentially improved dependence on the target precision as well as a lesser improvement with respect to the condtion number. We briefly review these techniques in the following subsection.
 
 \subsection{Matrix inversion by QSVT}
 
-To access $A$ in a quantum circuit, QSVT relies on quantum oracles which efficiently encode both the non-zero structure and non-zero elements of $A$, which are defined rigorously as follows.
+To access $A$ in a quantum circuit, QSVT relies on quantum oracles which efficiently encode both the non-zero structure and non-zero elements of $A$. These are defined rigorously as follows.
 
 \begin{definition}[Sparse access oracles \cite{camps2203explicit}]
 	\label{def::sparse_access_oracles}
@@ -90,11 +90,13 @@ The following informal theorem states that one can construct a unitary matrix wh
 	Let $A, O_c, O_A$ be as in Definition \ref{def::sparse_access_oracles}. Using one call to each of $O_c$ and $O_A$, we can construct a larger unitary matrix $U_A$ for which the upper left $2^n \times 2^n$ block is equal to $A/s$.
 \end{theorem}
 
-The final ingredient in matrix inversion by QSVT is to transform the singular values of $A/s$ as $x \mapsto 1/x$. QSVT cannot perform this transformation exactly, but can perform almost-arbitrary polynomial transformations \cite{sunderhauf2023generalized} and thus approximate $1/x$ to arbitrary precision.
+The final ingredient in matrix inversion by QSVT is then to transform the singular values of $A/s$ as $x \mapsto 1/x$. QSVT cannot perform this transformation exactly, but can perform almost-arbitrary polynomial transformations \cite{sunderhauf2023generalized} and thus approximate $1/x$ to arbitrary precision.
 
 \begin{theorem}[Matrix inversion by QSVT \cite{gilyen2019quantum}]
 	Let $A$ be a sparse matrix with condition number $\kappa$ and let $U_A$ block-encode $A$ as in Theorem \ref{thm:block_encoding_sparse_matrices}. Using $O(\kappa \log(\kappa / \varepsilon))$ calls to $U_A$ and $U_A^\dag$, we can construct a unitary which block-encodes $A^{-1}$ to within accuracy $\varepsilon$.
 \end{theorem}
+
+We refer the reader to \cite{martyn2021grand} for a pedagogical introduction to block encodings and QSVT.
 
 \subsection{Banded circulant matrices}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.21)  28 JUN 2024 15:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.21)  1 JUL 2024 12:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1191,12 +1191,12 @@ Package biblatex Info: Reference segment=0 on input line 45.
 
 
 ]
-Underfull \hbox (badness 2065) in paragraph at lines 123--123
+Underfull \hbox (badness 2065) in paragraph at lines 125--125
 []\OT1/cmr/m/n/10 A Yu Ki-taev. ``Quan-tum mea-sure-ments and the
  []
 
 
-Underfull \hbox (badness 3623) in paragraph at lines 123--123
+Underfull \hbox (badness 3623) in paragraph at lines 125--125
 \OT1/cmr/m/n/10 gu-lar Value Trans-for-ma-tion''. In: \OT1/cmr/m/it/10 arXiv pr
 eprint
  []
@@ -1230,10 +1230,10 @@ amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
 b>
-Output written on "QCE24 QRE Challenge Report.pdf" (2 pages, 162747 bytes).
+Output written on "QCE24 QRE Challenge Report.pdf" (2 pages, 163180 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
+ 140 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
  23 named destinations out of 1000 (max. 500000)
  53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
