@@ -7,8 +7,8 @@ Walden Killick
 from qiskit import QuantumCircuit, QuantumRegister
 from qiskit.circuit.gate import Gate
 from qiskit.circuit.library.standard_gates import XGate, RYGate
-from qce24_qre_challenge.quantum_oracles import SparseOracle
-from qce24_qre_challenge.sparse_matrices import BandedCirculantMatrix
+from qce24_qre_challenge.quantum_oracle import SparseOracle
+from qce24_qre_challenge.sparse_matrix import BandedCirculantMatrix
 import numpy as np
 
 
