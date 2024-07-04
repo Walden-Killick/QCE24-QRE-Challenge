@@ -11,7 +11,7 @@ qiskit = "^1.1.1"
 matplotlib = "^3.9.0"
 pylatexenc = "^2.10"
 pyqsp = "^0.1.6"
-azure-quantum = "^2.0.1"
+azure-quantum = {extras = ["qiskit"], version = "^2.0.1"}
 
 
 [tool.poetry.group.dev.dependencies]

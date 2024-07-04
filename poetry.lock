@@ -82,10 +82,19 @@ azure-core = ">=1.30,<2.0"
 azure-identity = ">=1.15,<2.0"
 azure-storage-blob = ">=12.19,<13.0"
 deprecated = ">=1.2.12,<2.0"
-Markdown = ">=3.4.1"
+Markdown = [
+    {version = ">=3.4.1"},
+    {version = ">=3.4.1,<4.0", optional = true, markers = "extra == \"qiskit\""},
+]
 msrest = ">=0.7.1,<1.0"
 numpy = ">=1.21.0,<2.0"
-python-markdown-math = ">=0.8"
+python-markdown-math = [
+    {version = ">=0.8"},
+    {version = ">=0.8,<1.0", optional = true, markers = "extra == \"qiskit\""},
+]
+qiskit = {version = ">=1.0,<2.0", optional = true, markers = "extra == \"qiskit\""}
+qiskit-ionq = {version = ">=0.5,<0.6", optional = true, markers = "extra == \"qiskit\""}
+qiskit-qir = {version = ">=0.5,<0.6", optional = true, markers = "extra == \"qiskit\""}
 
 [package.extras]
 all = ["Markdown (>=3.4.1,<4.0)", "azure-devtools (>=1.2.0,<2.0)", "cirq-core (>=1.1.0,<=1.2.0)", "cirq-ionq (>=1.1.0,<=1.2.0)", "graphviz (>=0.20.1)", "pyquil (>=3.3.2)", "python-markdown-math (>=0.8.0,<1.0)", "qiskit (>=1.0,<2.0)", "qiskit-ionq (>=0.5,<0.6)", "qiskit-qir (>=0.5,<0.6)", "qsharp (>=1.0.33,<2.0)", "vcrpy (>=4.3.1)"]
@@ -626,6 +635,25 @@ files = [
     {file = "idna-3.7-py3-none-any.whl", hash = "sha256:82fee1fc78add43492d3a1898bfa6d8a904cc97d8427f683ed8e798d07761aa0"},
     {file = "idna-3.7.tar.gz", hash = "sha256:028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"},
 ]
+
+[[package]]
+name = "importlib-metadata"
+version = "8.0.0"
+description = "Read metadata from Python packages"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "importlib_metadata-8.0.0-py3-none-any.whl", hash = "sha256:15584cf2b1bf449d98ff8a6ff1abef57bf20f3ac6454f431736cd3e660921b2f"},
+    {file = "importlib_metadata-8.0.0.tar.gz", hash = "sha256:188bd24e4c346d3f0a933f275c2fec67050326a856b9a359881d7c2a697e8812"},
+]
+
+[package.dependencies]
+zipp = ">=0.5"
+
+[package.extras]
+doc = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-lint"]
+perf = ["ipython"]
+test = ["flufl.flake8", "importlib-resources (>=1.3)", "jaraco.test (>=5.4)", "packaging", "pyfakefs", "pytest (>=6,!=8.1.*)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-mypy", "pytest-perf (>=0.9.2)", "pytest-ruff (>=0.2.1)"]
 
 [[package]]
 name = "ipykernel"
@@ -1352,6 +1380,17 @@ files = [
 tests = ["pytest"]
 
 [[package]]
+name = "py"
+version = "1.11.0"
+description = "library with cross-python path, ini-parsing, io, code, log facilities"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+files = [
+    {file = "py-1.11.0-py2.py3-none-any.whl", hash = "sha256:607c53218732647dff4acdfcd50cb62615cedf612e72d1724fb1a0cc6405b378"},
+    {file = "py-1.11.0.tar.gz", hash = "sha256:51c75c4126074b472f746a24399ad32f6053d1b34b68d2fa41e558e6f4a98719"},
+]
+
+[[package]]
 name = "pycparser"
 version = "2.22"
 description = "C parser in Python"
@@ -1421,6 +1460,21 @@ files = [
 diagrams = ["jinja2", "railroad-diagrams"]
 
 [[package]]
+name = "pyqir"
+version = "0.10.3"
+description = "PyQIR parses, generates and evaluates the Quantum Intermediate Representation."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "pyqir-0.10.3-cp38-abi3-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:c3c06bd25b84e861ea09b1c9781f345b501ebf693d41be331370e7d9f2f88657"},
+    {file = "pyqir-0.10.3-cp38-abi3-manylinux_2_31_x86_64.whl", hash = "sha256:4aeaf65cfc0c2fb97d0f4fa5339862e762b99090d3e7f453c252f61a66a1542f"},
+    {file = "pyqir-0.10.3-cp38-abi3-win_amd64.whl", hash = "sha256:11298d1dbb7ccacc0d5e3adf7f506d06c3e34233ee7c41902c69b3ce1b80c281"},
+]
+
+[package.extras]
+test = ["pytest (>=7.2.0,<7.3.0)"]
+
+[[package]]
 name = "pyqsp"
 version = "0.1.6"
 description = "Generate phase angles for quantum signal processing algorithms"
@@ -1448,6 +1502,20 @@ files = [
 
 [package.dependencies]
 six = ">=1.5"
+
+[[package]]
+name = "python-dotenv"
+version = "1.0.1"
+description = "Read key-value pairs from a .env file and set them as environment variables"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "python-dotenv-1.0.1.tar.gz", hash = "sha256:e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca"},
+    {file = "python_dotenv-1.0.1-py3-none-any.whl", hash = "sha256:f7b63ef50f1b690dddf550d03497b66d609393b40b564ed0d674909a68ebf16a"},
+]
+
+[package.extras]
+cli = ["click (>=5.0)"]
 
 [[package]]
 name = "python-markdown-math"
@@ -1625,6 +1693,42 @@ qasm3-import = ["qiskit-qasm3-import (>=0.1.0)"]
 visualization = ["Pillow (>=4.2.1)", "matplotlib (>=3.3)", "pydot", "pylatexenc (>=1.4)", "seaborn (>=0.9.0)"]
 
 [[package]]
+name = "qiskit-ionq"
+version = "0.5.1"
+description = "Qiskit provider for IonQ backends"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "qiskit-ionq-0.5.1.tar.gz", hash = "sha256:3577747a71d5af372f2f7249e5c75bffb5f24bb7bff3be0d1730affc17f8fffb"},
+    {file = "qiskit_ionq-0.5.1-py3-none-any.whl", hash = "sha256:458c64dee56c12feed1c81637eb3349c12b55e6fbecd78a663d3de6dc62fd6f8"},
+]
+
+[package.dependencies]
+decorator = ">=5.1.0"
+importlib-metadata = ">=4.11.4"
+python-dotenv = ">=1.0.1"
+requests = ">=2.24.0"
+retry = ">=0.9.0"
+
+[[package]]
+name = "qiskit-qir"
+version = "0.5.0"
+description = "Qiskit to QIR translator"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "qiskit-qir-0.5.0.tar.gz", hash = "sha256:5635837234974fdf6f1f6863231493f1fcdd571dc5283b480fe45ef69c9c86fd"},
+    {file = "qiskit_qir-0.5.0-py2.py3-none-any.whl", hash = "sha256:646c924919d24562d4640973f0284d32e9e2e8c63b6352b12e98f1bce89b1e8e"},
+]
+
+[package.dependencies]
+pyqir = ">=0.10.0,<0.11.0"
+qiskit = ">=1.0.0,<2.0"
+
+[package.extras]
+test = ["pytest"]
+
+[[package]]
 name = "requests"
 version = "2.32.3"
 description = "Python HTTP for Humans."
@@ -1662,6 +1766,21 @@ requests = ">=2.0.0"
 
 [package.extras]
 rsa = ["oauthlib[signedtoken] (>=3.0.0)"]
+
+[[package]]
+name = "retry"
+version = "0.9.2"
+description = "Easy to use retry decorator."
+optional = false
+python-versions = "*"
+files = [
+    {file = "retry-0.9.2-py2.py3-none-any.whl", hash = "sha256:ccddf89761fa2c726ab29391837d4327f819ea14d244c232a1d24c67a2f98606"},
+    {file = "retry-0.9.2.tar.gz", hash = "sha256:f8bfa8b99b69c4506d6f5bd3b0aabf77f98cdb17f3c9fc3f5ca820033336fba4"},
+]
+
+[package.dependencies]
+decorator = ">=3.4.2"
+py = ">=1.4.26,<2.0.0"
 
 [[package]]
 name = "ruff"
@@ -2016,7 +2135,22 @@ files = [
     {file = "wrapt-1.16.0.tar.gz", hash = "sha256:5f370f952971e7d17c7d1ead40e49f32345a7f7a5373571ef44d800d06b1899d"},
 ]
 
+[[package]]
+name = "zipp"
+version = "3.19.2"
+description = "Backport of pathlib-compatible object wrapper for zip files"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "zipp-3.19.2-py3-none-any.whl", hash = "sha256:f091755f667055f2d02b32c53771a7a6c8b47e1fdbc4b72a8b9072b3eef8015c"},
+    {file = "zipp-3.19.2.tar.gz", hash = "sha256:bf1dcf6450f873a13e952a29504887c89e6de7506209e5b1bcc3460135d4de19"},
+]
+
+[package.extras]
+doc = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-lint"]
+test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more-itertools", "pytest (>=6,!=8.1.*)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-ignore-flaky", "pytest-mypy", "pytest-ruff (>=0.2.1)"]
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "0cee0f2d5b645236a082a965ec70666f1faa14e021e7e884afbf90d4968e338a"
+content-hash = "5fd3ab5a4b4f97d876f40348fc1f390435b6b8dc7d58c74f89748c06cef5f7d6"
