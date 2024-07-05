@@ -12,6 +12,9 @@ matplotlib = "^3.9.0"
 pylatexenc = "^2.10"
 pyqsp = "^0.1.6"
 azure-quantum = {extras = ["qiskit"], version = "^2.0.1"}
+tensorflow = "^2.16.2"
+cirq = "^1.4.1"
+seaborn = "^0.13.2"
 
 
 [tool.poetry.group.dev.dependencies]
