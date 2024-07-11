@@ -2965,6 +2965,24 @@ qiskit = ">=1.0.0,<2.0"
 test = ["pytest"]
 
 [[package]]
+name = "qsharp"
+version = "1.6.0"
+description = "Q# Python Bindings"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "qsharp-1.6.0-cp37-abi3-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:71b1f085b58f2ff41d9db775e865e277119b5ef4a1a2600872a3a63a6bd1ab1c"},
+    {file = "qsharp-1.6.0-cp37-abi3-manylinux_2_31_aarch64.whl", hash = "sha256:d79eeb0b349dfa60293e8766577628a0c0be0bb77f1aa7ff46c4ac595cc17d70"},
+    {file = "qsharp-1.6.0-cp37-abi3-manylinux_2_31_x86_64.whl", hash = "sha256:efdb7178ae9147ac55afd57f0cf2850b6b8a588dcc4bbcb3661f40cc37ac386e"},
+    {file = "qsharp-1.6.0-cp37-abi3-win_amd64.whl", hash = "sha256:c9e3eb245187d68a1b589b66e1225e51a24df989de0c0282ed9ef6cb437686d7"},
+    {file = "qsharp-1.6.0-cp37-abi3-win_arm64.whl", hash = "sha256:a0e768d36bfd0522f820bc770254f596b08a6412c4c5be4cb254f55d026c3a35"},
+]
+
+[package.extras]
+jupyterlab = ["qsharp-jupyterlab"]
+widgets = ["qsharp-widgets"]
+
+[[package]]
 name = "requests"
 version = "2.32.3"
 description = "Python HTTP for Humans."
@@ -3873,4 +3891,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "3201afea78aa675cbbda61a4d152e106b8a51d6b7ef31f43792f01f34a6bb33e"
+content-hash = "88881996f92a4d10685545de9b26dbc5a2d8dc58dfe80649c00a01f90e113948"
