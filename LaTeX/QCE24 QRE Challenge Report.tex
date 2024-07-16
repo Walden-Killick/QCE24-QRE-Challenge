@@ -55,7 +55,7 @@
 
 \section{Introduction}
 
-Since the breakthrough 2009 algorithm of Harrow, Hassidim, and Lloyd (HHL algorithm), it has been well-known that for sparse, well-conditioned matrices, quantum computers are capable of solving systems of linear equations (SLEs) exponentially faster than the best classical algorithms \cite{harrow2009quantum}. To date, the HHL algorithm is still the most commonly cited quantum algorithm for solving SLEs, both in academic research and for industry applications. On the other hand, subsequent improvements to the HHL algorithm have not received the same attention despite achieving super complexity and being arguably conceptually simpler. In this project, we consider the use of the quantum singular value transformation (QSVT) \cite{gilyen2019quantum, martyn2021grand} in solving systems of linear equations and investigate the physical resource requirements this entails.
+Since the breakthrough 2009 algorithm of Harrow, Hassidim, and Lloyd (HHL algorithm), it has been well-known that for sparse, well-conditioned matrices, quantum computers are capable of solving systems of linear equations (SLEs) exponentially faster than the best classical algorithms \cite{harrow2009quantum}. On the other hand, subsequent improvements to the HHL algorithm have not received the same attention despite achieving super complexity and arguably greater conceptual simplicity. In this project, we consider the use of the quantum singular value transformation (QSVT) \cite{gilyen2019quantum, martyn2021grand} in solving systems of linear equations and investigate the physical resource requirements this entails.
 
 All code used to generate the results in this report can  be found at \href{https://github.com/Walden-Killick/QCE24-QRE-Challenge}{https://github.com/Walden-Killick/QCE24-QRE-Challenge}.
 
@@ -86,14 +86,15 @@ We should note that in this formalism, $O_A$ also implicitly encodes the non-zer
 The following informal theorem states that one can construct a unitary matrix which directly contains (a scaled version of) $A$ as a submatrix (block).
 
 \begin{theorem}[Block-encoding sparse matrices \cite{gilyen2019quantum, camps2203explicit}]
-	\label{thm:block_encoding_sparse_matrices}
+	\label{thm::block_encoding_sparse_matrices}
 	Let $A, O_c, O_A$ be as in Definition \ref{def::sparse_access_oracles}. Using one call to each of $O_c$ and $O_A$, we can construct a larger unitary matrix $U_A$ for which the upper left $2^n \times 2^n$ block is equal to $A/s$.
 \end{theorem}
 
 The final ingredient in matrix inversion by QSVT is then to transform the singular values of $A/s$ as $x \mapsto 1/x$. QSVT cannot perform this transformation exactly, but can perform almost-arbitrary polynomial transformations \cite{sunderhauf2023generalized} and thus approximate $1/x$ to arbitrary precision.
 
 \begin{theorem}[Matrix inversion by QSVT \cite{gilyen2019quantum}]
-	Let $A$ be a sparse matrix with condition number $\kappa$ and let $U_A$ block-encode $A$ as in Theorem \ref{thm:block_encoding_sparse_matrices}. Using $O(\kappa \log(\kappa / \varepsilon))$ calls to $U_A$ and $U_A^\dag$, we can construct a unitary which block-encodes $A^{-1}$ to within accuracy $\varepsilon$.
+	\label{thm::matrix_inversion_by_qsvt}
+	Let $A$ be a sparse matrix with condition number $\kappa$ and let $U_A$ block-encode $A$ as in Theorem \ref{thm::block_encoding_sparse_matrices}. Using $O(\kappa \log(\kappa / \varepsilon))$ calls to $U_A$ and $U_A^\dag$, we can construct a unitary which block-encodes $A^{-1}$ to within accuracy $\varepsilon$.
 \end{theorem}
 
 We refer the reader to \cite{martyn2021grand} for a pedagogical introduction to block encodings and QSVT.
@@ -107,17 +108,32 @@ To construct polynomial-size oracles $O_c$ and $O_A$, $A$ must be well-structure
 \end{definition}
 
 \begin{definition}[Banded circulant matrix]
-	A circulant matrix is banded if only the first three elements of the second row are non-zero.
-	\[
-		\begin{bmatrix}
-			\alpha & \gamma & 0 & \cdots & \beta \\
-			\beta & \alpha & \gamma & \cdots & 0 \\
-			0 & \beta & \alpha & \cdots & 0 \\
-			\vdots & \vdots & \vdots & \ddots & \vdots \\
-			\gamma & 0 & 0 & \cdots & \alpha
-		\end{bmatrix}
-	\]
+	A circulant matrix is banded if only the first three entries of the second row are non-zero.
 \end{definition}
+
+The following is an example of a banded circulant matrix with diagonal entries $\alpha$, sub-diagonal entries $\beta$, and super-diagonal entries $\gamma$.
+\[
+	\begin{bmatrix}
+		\alpha & \gamma & 0 & \cdots & \beta \\
+		\beta & \alpha & \gamma & \cdots & 0 \\
+		0 & \beta & \alpha & \cdots & 0 \\
+		\vdots & \vdots & \vdots & \ddots & \vdots \\
+		\gamma & 0 & 0 & \cdots & \alpha
+	\end{bmatrix}.
+\]
+Reference \cite{camps2203explicit} shows how to construct polynomial-size sparse-access oracles for this class of matrices, for which we show high-level sketches in Figure \ref{fig::block_encoding_circuit}. In particular, the authors show how to construct $O_A$ in $O(1)$ time and $O_c$ in $O(\log(N))$ time\footnote{Their construction of $O_c$ requires multi-controlled \textsc{NOT} gates with $O(\log(N))$ controls; however, this does not prohibitively impact the complexity as such gates can be decomposed into linear-depth circuits with local gates \cite{da2022linear}.}. Combining this with Theorems \ref{thm::block_encoding_sparse_matrices} and \ref{thm::matrix_inversion_by_qsvt}, we can see that using the aforementioned construction, we can perform matrix inversion by QSVT in time $O(\kappa \log(N) \log(\kappa / \varepsilon))$, retaining the exponential quantum speedup with respect to the matrix size. This furthermore outperforms the HHL algorithm with respect to both precision and the condition number, which has a complexity of $O(\kappa^2 \log(N) / \varepsilon)$ \cite{harrow2009quantum}.
+
+\begin{figure}
+	\centering
+	\begin{quantikz}[column sep = 2pt]
+		& \qw & \qw & \gate{R_Y(\theta_0)}\gategroup[3, steps = 3, style = {dashed, rounded corners, inner xsep = 2pt, inner ysep = 2pt} ]{$O_A$} & \gate{R_Y(\theta_1)} & \gate{R_Y(\theta_2)} & \qw & \qw & \qw & \qw & \qw & \qw \\
+		& \gate{H} & \hphantomgate{} & \octrl{-1} & \octrl{-1} & \ctrl{-1} & \qw & \qw\gategroup[3, steps = 2, style = {dashed, rounded corners, inner xsep = 2pt, inner ysep = 2pt}, label style = {label position = below, anchor = north, yshift = -6pt}]{$O_c$} & \ctrl{2} & \hphantomgate{} & \gate{H} & \qw \\
+		& \gate{H} & \qw & \octrl{-1} & \ctrl{-1} & \octrl{-1} & \qw & \ctrl{1} & \qw & \qw & \gate{H} & \qw \\
+		& \qwbundle{n = \ceil{\log{N}}} & \qw & \qw & \qw & \qw & \hphantomgate{} & \gate{L} & \gate{R} & \qw & \qw & \qw
+	\end{quantikz}
+	\caption{Quantum circuit for block-encoding an $N \times N$ banded circulant matrix, adapted from \cite{camps2203explicit}. For $n = \ceil{\log{N}}$ qubits, the $L$ and $R$ gates each consist of $n$ multi-controlled \textsc{NOT} with successively decreasing numbers of controls.}
+	\label{fig::block_encoding_circuit}
+\end{figure}
 
 \newpage
 

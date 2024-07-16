@@ -298,6 +298,40 @@
       \field{title}{Generalized Quantum Singular Value Transformation}
       \field{year}{2023}
     \endentry
+    \entry{da2022linear}{article}{}
+      \name{author}{2}{}{%
+        {{hash=292bfffb7b170613368bece46fba2b99}{%
+           family={Da\bibnamedelima Silva},
+           familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Adenilton\bibnamedelima J},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=a47d3f2a783e7cf40d5b8c69c5015004}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Daniel\bibnamedelima K},
+           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {APS}%
+      }
+      \strng{namehash}{7cb915ecc3c9eb45aa158d1b04bc569c}
+      \strng{fullhash}{7cb915ecc3c9eb45aa158d1b04bc569c}
+      \strng{bibnamehash}{7cb915ecc3c9eb45aa158d1b04bc569c}
+      \strng{authorbibnamehash}{7cb915ecc3c9eb45aa158d1b04bc569c}
+      \strng{authornamehash}{7cb915ecc3c9eb45aa158d1b04bc569c}
+      \strng{authorfullhash}{7cb915ecc3c9eb45aa158d1b04bc569c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review A}
+      \field{number}{4}
+      \field{title}{Linear-depth quantum circuits for multiqubit controlled gates}
+      \field{volume}{106}
+      \field{year}{2022}
+      \field{pages}{042602}
+      \range{pages}{1}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

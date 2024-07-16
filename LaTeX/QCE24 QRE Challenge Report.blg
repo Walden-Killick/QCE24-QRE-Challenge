@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'QCE24 QRE Challenge Report.blg'
-[32] biber:340> INFO - === Fri Jun 28, 2024, 10:29:21
-[39] Biber.pm:418> INFO - Reading 'QCE24 QRE Challenge Report.bcf'
-[64] Biber.pm:972> INFO - Found 8 citekeys in bib section 0
-[69] Biber.pm:4383> INFO - Processing section 0
-[73] Biber.pm:4574> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[74] bibtex.pm:1713> INFO - LaTeX decoding ...
-[77] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliography.bib'
-[109] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[109] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[109] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[109] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
-[110] bbl.pm:654> INFO - Writing 'QCE24 QRE Challenge Report.bbl' with encoding 'UTF-8'
-[112] bbl.pm:757> INFO - Output to QCE24 QRE Challenge Report.bbl
+[28] biber:340> INFO - === Sun Jul 14, 2024, 18:49:16
+[35] Biber.pm:418> INFO - Reading 'QCE24 QRE Challenge Report.bcf'
+[59] Biber.pm:972> INFO - Found 9 citekeys in bib section 0
+[64] Biber.pm:4383> INFO - Processing section 0
+[69] Biber.pm:4574> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[69] bibtex.pm:1713> INFO - LaTeX decoding ...
+[73] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliography.bib'
+[105] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[105] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[105] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[105] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[107] bbl.pm:654> INFO - Writing 'QCE24 QRE Challenge Report.bbl' with encoding 'UTF-8'
+[110] bbl.pm:757> INFO - Output to QCE24 QRE Challenge Report.bbl
