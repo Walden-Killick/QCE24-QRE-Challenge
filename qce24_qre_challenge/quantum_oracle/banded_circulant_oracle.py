@@ -9,7 +9,7 @@ from qiskit import QuantumCircuit, QuantumRegister
 from qiskit.circuit.gate import Gate
 from qiskit.circuit.library.standard_gates import RYGate, XGate
 
-from qce24_qre_challenge.quantum_oracle import SparseOracle
+from qce24_qre_challenge.quantum_oracle.sparse_oracle import SparseOracle
 from qce24_qre_challenge.sparse_matrix import BandedCirculantMatrix
 
 

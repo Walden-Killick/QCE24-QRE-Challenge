@@ -6,7 +6,7 @@ Walden Killick
 
 import numpy as np
 
-from qce24_qre_challenge.sparse_matrix import SparseMatrix
+from qce24_qre_challenge.sparse_matrix.sparse_matrix import SparseMatrix
 
 
 class BandedCirculantMatrix(SparseMatrix):
