@@ -4,7 +4,7 @@ Cambridge Consultants 2024
 Walden Killick
 """
 
-from .sparse_oracle import SparseOracle
 from .banded_circulant_oracle import BandedCirculantOracle
+from .sparse_oracle import SparseOracle
 
 __all__ = ["SparseOracle", "BandedCirculantOracle"]

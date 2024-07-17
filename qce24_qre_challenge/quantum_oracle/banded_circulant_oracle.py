@@ -4,12 +4,13 @@ Cambridge Consultants 2024
 Walden Killick
 """
 
+import numpy as np
 from qiskit import QuantumCircuit, QuantumRegister
 from qiskit.circuit.gate import Gate
-from qiskit.circuit.library.standard_gates import XGate, RYGate
+from qiskit.circuit.library.standard_gates import RYGate, XGate
+
 from qce24_qre_challenge.quantum_oracle import SparseOracle
 from qce24_qre_challenge.sparse_matrix import BandedCirculantMatrix
-import numpy as np
 
 
 def loc_shift_gate(num_qubits: int, direction: str) -> Gate:

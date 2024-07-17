@@ -44,7 +44,7 @@
 
 \begin{document}
 
-\title{QCE'24 Quantum Resource Estimation Educational Challenge - Matrix Inversion by QSVT}
+\title{QCE'24 Quantum Resource Estimation Educational Challenge Submission - Matrix Inversion by QSVT}
 \author{Walden Killick}
 
 \maketitle
@@ -55,7 +55,9 @@
 
 \section{Introduction}
 
-Since the breakthrough 2009 algorithm of Harrow, Hassidim, and Lloyd (HHL algorithm), it has been well-known that for sparse, well-conditioned matrices, quantum computers are capable of solving systems of linear equations (SLEs) exponentially faster than the best classical algorithms \cite{harrow2009quantum}. On the other hand, subsequent improvements to the HHL algorithm have not received the same attention despite achieving super complexity and arguably greater conceptual simplicity. In this project, we consider the use of the quantum singular value transformation (QSVT) \cite{gilyen2019quantum, martyn2021grand} in solving systems of linear equations and investigate the physical resource requirements this entails.
+Since the breakthrough 2009 algorithm of Harrow, Hassidim, and Lloyd (HHL algorithm), it has been well-known that for sparse, well-conditioned matrices, quantum computers are capable of solving the system of linear equations (SLE) problem exponentially faster than the best possible classical algorithms \cite{harrow2009quantum}. Due to the complexities of practical implementation, the performance analyses of quantum algorithms for solving SLEs have been primarily restricted to the asymptotic regime. In this project, we aim to answer the question of what physical quantum resources are required to solve SLEs of sizes at which the problem becomes classically intractable.
+
+On the other hand, subsequent improvements to the HHL algorithm have not received the same attention despite achieving super complexity and arguably greater conceptual simplicity. In this project, we consider the use of the quantum singular value transformation (QSVT) \cite{gilyen2019quantum, martyn2021grand} in solving systems of linear equations and investigate the physical resource requirements this entails.
 
 All code used to generate the results in this report can  be found at \href{https://github.com/Walden-Killick/QCE24-QRE-Challenge}{https://github.com/Walden-Killick/QCE24-QRE-Challenge}.
 
@@ -131,7 +133,7 @@ Reference \cite{camps2203explicit} shows how to construct polynomial-size sparse
 		& \gate{H} & \qw & \octrl{-1} & \ctrl{-1} & \octrl{-1} & \qw & \ctrl{1} & \qw & \qw & \gate{H} & \qw \\
 		& \qwbundle{n = \ceil{\log{N}}} & \qw & \qw & \qw & \qw & \hphantomgate{} & \gate{L} & \gate{R} & \qw & \qw & \qw
 	\end{quantikz}
-	\caption{Quantum circuit for block-encoding an $N \times N$ banded circulant matrix, adapted from \cite{camps2203explicit}. For $n = \ceil{\log{N}}$ qubits, the $L$ and $R$ gates each consist of $n$ multi-controlled \textsc{NOT} with successively decreasing numbers of controls.}
+	\caption{Quantum circuit for block-encoding an $N \times N$ banded circulant matrix, adapted from \cite{camps2203explicit}. For $n = \ceil{\log{N}}$ qubits, the $L$ and $R$ gates each consist of $n$ multi-controlled \textsc{NOT} gates with successively decreasing numbers of controls.}
 	\label{fig::block_encoding_circuit}
 \end{figure}
 

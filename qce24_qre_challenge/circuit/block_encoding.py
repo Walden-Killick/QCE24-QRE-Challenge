@@ -5,7 +5,9 @@ Walden Killick
 """
 
 from qiskit import QuantumCircuit, QuantumRegister
+
 from qce24_qre_challenge.quantum_oracle import SparseOracle
+
 from .circuit import Circuit
 
 

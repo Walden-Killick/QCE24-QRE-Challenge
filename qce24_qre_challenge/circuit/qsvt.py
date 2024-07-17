@@ -4,12 +4,14 @@ Cambridge Consultants 2024
 Walden Killick
 """
 
-from qiskit import QuantumCircuit, QuantumRegister
-from qiskit.circuit.library.standard_gates import XGate
-from qiskit.circuit.library import StatePreparation
 import numpy as np
+from qiskit import QuantumCircuit, QuantumRegister
+from qiskit.circuit.library import StatePreparation
+from qiskit.circuit.library.standard_gates import XGate
 from qiskit.quantum_info import Statevector
+
 from qce24_qre_challenge.circuit import BlockEncoding
+
 from .circuit import Circuit
 
 

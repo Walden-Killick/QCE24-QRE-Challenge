@@ -4,11 +4,11 @@ Cambridge Consultants 2024
 Walden Killick
 """
 
-from qiskit import QuantumCircuit, QuantumRegister
-from qiskit.circuit.library import StatePreparation
-from qiskit.circuit.library import QFT
 import numpy as np
+from qiskit import QuantumCircuit, QuantumRegister
+from qiskit.circuit.library import QFT, StatePreparation
 from qiskit.quantum_info import Statevector
+
 from .circuit import Circuit
 
 

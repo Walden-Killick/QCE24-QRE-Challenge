@@ -4,8 +4,9 @@ Cambridge Consultants 2024
 Walden Killick
 """
 
-from qce24_qre_challenge.sparse_matrix import SparseMatrix
 import numpy as np
+
+from qce24_qre_challenge.sparse_matrix import SparseMatrix
 
 
 class BandedCirculantMatrix(SparseMatrix):

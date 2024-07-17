@@ -32,7 +32,7 @@ target-version = "py310"
 [tool.ruff.lint]
 # Enable flake8 (Pyflakes + pycodestyle), pep8-naming, flake8-bugbear, pylint 
 # and check for unused error suppression 
-select = ["D", "F", "E", "W", "N", "B", "PL", "RUF100"]
+select = ["D", "F", "E", "W", "N", "B", "PL", "RUF100", "I"]
 
 # Ignore too many argument errors, and the opinionated flake8-bugbear rules
 ignore = ["PLR0912","PLR0913", "PLR0914", "B901", "B904", "B905", "B909", "PLR2004"]

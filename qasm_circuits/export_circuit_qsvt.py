@@ -5,13 +5,15 @@ Walden Killick
 """
 
 from pathlib import Path
-from qce24_qre_challenge.circuit import QSVT, BlockEncoding
-from qce24_qre_challenge.sparse_matrix import BandedCirculantMatrix
-from qce24_qre_challenge.quantum_oracle import BandedCirculantOracle
+
+import numpy as np
 import pyqsp
 from pyqsp.angle_sequence import Polynomial
 from qiskit import qasm2
-import numpy as np
+
+from qce24_qre_challenge.circuit import QSVT, BlockEncoding
+from qce24_qre_challenge.quantum_oracle import BandedCirculantOracle
+from qce24_qre_challenge.sparse_matrix import BandedCirculantMatrix
 
 MATRIX_SIZES = [4, 8, 16, 32, 64, 128, 256]
 KAPPA = 3
