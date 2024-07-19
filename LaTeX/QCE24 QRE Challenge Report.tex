@@ -19,6 +19,7 @@
 \usepackage{braket}
 \usepackage{dirtytalk}
 \usepackage{hyperref}
+\usepackage{pgfplots}
 \usetikzlibrary{quantikz}
 
 \DeclareMathOperator{\lcm}{lcm}
@@ -50,7 +51,7 @@
 \maketitle
 
 \begin{abstract}
-	We produce physical resource estimates for solving systems of linear equations involving banded circulant matrices using the quantum singular value transformation algorithm.
+	We investigate the physical resources required to solve systems of linear equations using the quantum singular value transform algorithm. We find that empirically, the qubit counts scale favourably with the input size; yet the circuit runtimes do not seem to scale significantly better than classically, despite the complexity-theoretic arguments towards the contrary. We identify bottlenecks in the scaling and highlight the need for further optimisation before such quantum algorithms can outperform their classical counterparts.
 \end{abstract}
 
 \section{Introduction}
@@ -103,7 +104,7 @@ We refer the reader to \cite{martyn2021grand} for a pedagogical introduction to 
 
 \subsection{Banded circulant matrices}
 
-To construct polynomial-size oracles $O_c$ and $O_A$, $A$ must be well-structured in some way. For this project, we consider banded circulant matrices due to the known explicit and simple construction of their sparse access oracles \cite{camps2203explicit}.
+To construct polynomial-size oracles $O_c$ and $O_A$, $A$ must be well-structured in some way. For this project, we consider \textit{banded circulant} matrices primarily due to the known explicit and simple construction of their sparse access oracles.
 
 \begin{definition}[Circulant matrix]
 	A circulant matrix is a matrix in which each row is equal to the previous row but with each element shifted one place to the right.
@@ -113,7 +114,7 @@ To construct polynomial-size oracles $O_c$ and $O_A$, $A$ must be well-structure
 	A circulant matrix is banded if only the first three entries of the second row are non-zero.
 \end{definition}
 
-The following is an example of a banded circulant matrix with diagonal entries $\alpha$, sub-diagonal entries $\beta$, and super-diagonal entries $\gamma$.
+The following is an example of a banded circulant matrix with diagonal entries $\alpha$, sub-diagonal entries $\beta$, and super-diagonal entries $\gamma$:
 \[
 	\begin{bmatrix}
 		\alpha & \gamma & 0 & \cdots & \beta \\
@@ -123,7 +124,7 @@ The following is an example of a banded circulant matrix with diagonal entries $
 		\gamma & 0 & 0 & \cdots & \alpha
 	\end{bmatrix}.
 \]
-Reference \cite{camps2203explicit} shows how to construct polynomial-size sparse-access oracles for this class of matrices, for which we show high-level sketches in Figure \ref{fig::block_encoding_circuit}. In particular, the authors show how to construct $O_A$ in $O(1)$ time and $O_c$ in $O(\log(N))$ time\footnote{Their construction of $O_c$ requires multi-controlled \textsc{NOT} gates with $O(\log(N))$ controls; however, this does not prohibitively impact the complexity as such gates can be decomposed into linear-depth circuits with local gates \cite{da2022linear}.}. Combining this with Theorems \ref{thm::block_encoding_sparse_matrices} and \ref{thm::matrix_inversion_by_qsvt}, we can see that using the aforementioned construction, we can perform matrix inversion by QSVT in time $O(\kappa \log(N) \log(\kappa / \varepsilon))$, retaining the exponential quantum speedup with respect to the matrix size. This furthermore outperforms the HHL algorithm with respect to both precision and the condition number, which has a complexity of $O(\kappa^2 \log(N) / \varepsilon)$ \cite{harrow2009quantum}.
+Reference \cite{camps2203explicit} shows how to construct polynomial-size sparse-access oracles for this class of matrices, for which we show high-level sketches in Figure \ref{fig::block_encoding_circuit}. In particular, the authors show how to construct $O_A$ in $O(1)$ time and $O_c$ in $O(\text{poly}\log(N))$ time\footnote{Their construction of $O_c$ requires $n = \ceil{\log(N)}$ multi-controlled \textsc{NOT} gates with $n-1, n-2, \dots, 0$ controls. This theoretically does not prohibitively impact the complexity as such gates can be decomposed into linear-depth circuits with local gates \cite{da2022linear}.}. Combining this with Theorems \ref{thm::block_encoding_sparse_matrices} and \ref{thm::matrix_inversion_by_qsvt}, we can see that using the aforementioned construction, we can perform matrix inversion by QSVT in time $O(\kappa \, \text{poly}\log(N) \log(\kappa / \varepsilon))$, retaining the exponential quantum speedup with respect to the matrix size. This furthermore outperforms the HHL algorithm with respect to both precision and the condition number, which has a complexity of $O(\kappa^2 \log(N) / \varepsilon)$ \cite{harrow2009quantum}.
 
 \begin{figure}
 	\centering
@@ -135,6 +136,56 @@ Reference \cite{camps2203explicit} shows how to construct polynomial-size sparse
 	\end{quantikz}
 	\caption{Quantum circuit for block-encoding an $N \times N$ banded circulant matrix, adapted from \cite{camps2203explicit}. For $n = \ceil{\log{N}}$ qubits, the $L$ and $R$ gates each consist of $n$ multi-controlled \textsc{NOT} gates with successively decreasing numbers of controls.}
 	\label{fig::block_encoding_circuit}
+\end{figure}
+
+\section{Results}
+
+The resource estimates were generated by exporting Qiskit QSVT circuits to OpenQASM 2 files and subsequently loading them into the Microsoft Azure Quantum Resource Estimator via the web portal. We are primarily concerned with observing how the resource estimates scale with the input size $N$, and thus arbitrarily assume condition number $\kappa=3$ and target accuracy $\varepsilon=0.1$ for all circuits.
+
+\subsection{Qubit counts}
+
+Figure \ref{fig::qre_qubits} shows how the logical and physical resource estimates scale with the input size. Whilst the logical qubit estimates conform very naturally with the expected logarithmic growth, the physical estimates scale much more erratically, most likely due to the lack of a consistent structure between problem instances when transpiling error-corrected circuits to the physical layout. In the interest of extrapolating to worst-case resource estimates, we consider the instances which outperform an instance of smaller size to be outliers (indicated with hollow markers in Figure \ref{fig::qre_qubits}). Promisingly, despite the somewhat chaotic results, the physical resource estimates nonetheless seem to likewise conform to a logarithmic growth with $N$.
+
+The logarithmic best-fit functions, computed using NumPy's polyfit function, are as follows:
+\begin{align*}
+	y_\text{logical} &= 3.607 \log{N} + 15.214, \\
+	y_\text{physical} &= 67769.490 \log{N} + 219131.346,
+\end{align*}
+where $\log$ denotes the natural logarithm.
+
+Although highly impractical for small problem sizes due to the large constant factors, the data would seem to empirically imply that a reasonably achievable number of physical qubits will be able to tackle problems of classically intractable sizes. For example, if the extrapolation of the physical qubit requirements remains accurate for large inputs, a $10^{100}$-dimensional banded circulant matrix could be inverted using under 16 million physical qubits.
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[xlabel=Matrix dimension, ylabel=Qubits, xtick={4, 32, 64, 128, 256}, width=8.75cm, height=6cm, legend style={at={(0,1)}, anchor = south west}]
+			\addplot[mark=*, only marks, color=blue] coordinates{(4,20)(8,23)(16,25)(32,28)(64,30)(128,33)(256,35)};
+			\addlegendentry{Logical};
+			\addplot[mark=square*, only marks, color=red, thick] coordinates{(4,33.3)(8,33.435)(128,55.695)(256,59.171)};
+			\addplot[mark=square, only marks, color=red, thick] coordinates{(16,28.445)(32,30.418)(64,27.366)};
+			\addlegendentry{Physical ($\times 10,000$)};
+			\addplot[domain = 4:256, samples=100, smooth, thick, dashed, color=blue] {3.6067376022224074*ln(x)+15.214285714285719};
+			\addplot[domain = 4:256, samples=100, smooth, thick, dashed, color=red] {(67769.48978034298*ln(x)+219131.34615384619)/10000};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Resource estimates for the logical and physical qubit requirements for matrix inversion by QSVT.}
+	\label{fig::qre_qubits}
+\end{figure}
+
+\subsection{Runtimes}
+
+Figure \ref{fig::qre_runtime} shows how the runtime estimates scale with the input size. In this case, the runtime of matrix inversion by QSVT is clearly not scaling with the ideal polylogarithmic growth.
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[xlabel=Matrix dimension, ylabel=Runtime (seconds), width=8.75cm, height=6cm, legend style={at={(0,1)}, anchor = south west}]
+			\addplot[mark=*, only marks, color=blue] coordinates{(4,0.106)(8,0.209)(16,0.590)(32,1)(64,4)(128,8)(256,15)};
+			\addplot[domain = 4:256, samples=100, smooth, thick, dashed, color=blue] {0.06069840030772014*x - 0.27568390804597964};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Resource estimates for the running time of matrix inversion by QSVT.}
+	\label{fig::qre_runtime}
 \end{figure}
 
 \newpage
