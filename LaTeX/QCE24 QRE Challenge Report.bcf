@@ -2359,19 +2359,21 @@
     <bcf:citekey order="11">gilyen2019quantum</bcf:citekey>
     <bcf:citekey order="12">martyn2021grand</bcf:citekey>
     <bcf:citekey order="13">camps2203explicit</bcf:citekey>
-    <bcf:citekey order="14">da2022linear</bcf:citekey>
-    <bcf:citekey order="15">harrow2009quantum</bcf:citekey>
+    <bcf:citekey order="14">harrow2009quantum</bcf:citekey>
+    <bcf:citekey order="15">camps2203explicit</bcf:citekey>
     <bcf:citekey order="16">camps2203explicit</bcf:citekey>
-    <bcf:citekey order="17">camps2203explicit</bcf:citekey>
-    <bcf:citekey order="18">harrow2009quantum</bcf:citekey>
-    <bcf:citekey order="19">gilyen2019quantum</bcf:citekey>
-    <bcf:citekey order="20">martyn2021grand</bcf:citekey>
-    <bcf:citekey order="21">berry2007efficient</bcf:citekey>
-    <bcf:citekey order="22">kitaev1995quantum</bcf:citekey>
-    <bcf:citekey order="23">low2017optimal</bcf:citekey>
-    <bcf:citekey order="24">camps2203explicit</bcf:citekey>
-    <bcf:citekey order="25">sunderhauf2023generalized</bcf:citekey>
-    <bcf:citekey order="26">da2022linear</bcf:citekey>
+    <bcf:citekey order="17">barenco1995elementary</bcf:citekey>
+    <bcf:citekey order="18">claudon2024polylogarithmic</bcf:citekey>
+    <bcf:citekey order="19">harrow2009quantum</bcf:citekey>
+    <bcf:citekey order="20">gilyen2019quantum</bcf:citekey>
+    <bcf:citekey order="21">martyn2021grand</bcf:citekey>
+    <bcf:citekey order="22">berry2007efficient</bcf:citekey>
+    <bcf:citekey order="23">kitaev1995quantum</bcf:citekey>
+    <bcf:citekey order="24">low2017optimal</bcf:citekey>
+    <bcf:citekey order="25">camps2203explicit</bcf:citekey>
+    <bcf:citekey order="26">sunderhauf2023generalized</bcf:citekey>
+    <bcf:citekey order="27">barenco1995elementary</bcf:citekey>
+    <bcf:citekey order="28">claudon2024polylogarithmic</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

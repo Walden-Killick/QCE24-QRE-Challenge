@@ -51,14 +51,12 @@
 \maketitle
 
 \begin{abstract}
-	We investigate the physical resources required to solve systems of linear equations using the quantum singular value transform algorithm. We find that empirically, the qubit counts scale favourably with the input size; yet the circuit runtimes do not seem to scale significantly better than classically, despite the complexity-theoretic arguments towards the contrary. We identify bottlenecks in the scaling and highlight the need for further optimisation before such quantum algorithms can outperform their classical counterparts.
+	We investigate the physical resources required to solve systems of linear equations using the quantum singular value transform algorithm. We find that empirically, both the qubit counts and runtimes scale favourably with the input size, and by extrapolating the data we predict that our implementation may be able to demonstrate quantum advantage for matrix inversion with achievable physical resources. We furthermore identify bottlenecks in the scaling and highlight opportunities for further optimisation.
 \end{abstract}
 
 \section{Introduction}
 
-Since the breakthrough 2009 algorithm of Harrow, Hassidim, and Lloyd (HHL algorithm), it has been well-known that for sparse, well-conditioned matrices, quantum computers are capable of solving the system of linear equations (SLE) problem exponentially faster than the best possible classical algorithms \cite{harrow2009quantum}. Due to the complexities of practical implementation, the performance analyses of quantum algorithms for solving SLEs have been primarily restricted to the asymptotic regime. In this project, we aim to answer the question of what physical quantum resources are required to solve SLEs of sizes at which the problem becomes classically intractable.
-
-On the other hand, subsequent improvements to the HHL algorithm have not received the same attention despite achieving super complexity and arguably greater conceptual simplicity. In this project, we consider the use of the quantum singular value transformation (QSVT) \cite{gilyen2019quantum, martyn2021grand} in solving systems of linear equations and investigate the physical resource requirements this entails.
+Since the breakthrough 2009 algorithm of Harrow, Hassidim, and Lloyd (HHL algorithm), it has been well-known that for sparse, well-conditioned matrices, quantum computers are capable of solving the system of linear equations (SLE) problem exponentially faster than the best possible classical algorithms \cite{harrow2009quantum}. Due to the complexities of practical implementation, the performance analyses of quantum algorithms for solving SLEs have thus far been primarily restricted to the asymptotic regime. In this project, we aim to answer the question of what physical quantum resources are required to solve SLEs of sizes at which the problem becomes classically intractable. Specifically, we consider the use of the quantum singular value transformation (QSVT) which achieves the best asymptotic complexity of all known quantum SLE algorithms \cite{gilyen2019quantum, martyn2021grand}.
 
 All code used to generate the results in this report can  be found at \href{https://github.com/Walden-Killick/QCE24-QRE-Challenge}{https://github.com/Walden-Killick/QCE24-QRE-Challenge}.
 
@@ -66,7 +64,7 @@ All code used to generate the results in this report can  be found at \href{http
 
 \subsection{Problem definition}
 
-Given a quantum state $\ket{b}$ and an efficient classical description of a sparse matrix $A$, the quantum linear system of equations (QSLE) problem is the problem of preparing the state $\ket{x} = A^{-1} \ket{b}$. Broadly speaking, the primary challenges in any QSLE algorithm are (1) accessing $A$ in a quantum circuit, and (2) performing (approximately) the transformation $x \mapsto 1/x$ on $A$'s eigenvalues. The HHL algorithm \cite{harrow2009quantum} achieves these goals using a sparse Hamiltonian simulation subroutine \cite{berry2007efficient} and quantum phase estimation \cite{kitaev1995quantum}, respectively. By contrast, QSVT utilises the fundamentally different techniques of block encoding \cite{gilyen2019quantum} and quantum signal processing \cite{low2017optimal} and achieves an exponentially improved dependence on the target precision as well as a lesser improvement with respect to the condtion number. We briefly review these techniques in the following subsection.
+Given a quantum state $\ket{b}$ and an efficient classical description of a sparse matrix $A$, the quantum system of linear equations (QSLE) problem is the problem of preparing the state $\ket{x} = A^{-1} \ket{b}$. Broadly speaking, the primary challenges in any QSLE algorithm are (1) accessing $A$ in a quantum circuit, and (2) performing (approximately) the transformation $x \mapsto 1/x$ on $A$'s eigenvalues. The HHL algorithm \cite{harrow2009quantum} achieves these goals using a sparse Hamiltonian simulation subroutine \cite{berry2007efficient} and quantum phase estimation \cite{kitaev1995quantum}, respectively. By contrast, QSVT utilises the fundamentally different techniques of block encoding \cite{gilyen2019quantum} and quantum signal processing \cite{low2017optimal} and achieves an exponentially improved dependence on the target precision as well as a lesser improvement with respect to the condtion number. We briefly review these techniques in the following subsection.
 
 \subsection{Matrix inversion by QSVT}
 
@@ -124,7 +122,9 @@ The following is an example of a banded circulant matrix with diagonal entries $
 		\gamma & 0 & 0 & \cdots & \alpha
 	\end{bmatrix}.
 \]
-Reference \cite{camps2203explicit} shows how to construct polynomial-size sparse-access oracles for this class of matrices, for which we show high-level sketches in Figure \ref{fig::block_encoding_circuit}. In particular, the authors show how to construct $O_A$ in $O(1)$ time and $O_c$ in $O(\text{poly}\log(N))$ time\footnote{Their construction of $O_c$ requires $n = \ceil{\log(N)}$ multi-controlled \textsc{NOT} gates with $n-1, n-2, \dots, 0$ controls. This theoretically does not prohibitively impact the complexity as such gates can be decomposed into linear-depth circuits with local gates \cite{da2022linear}.}. Combining this with Theorems \ref{thm::block_encoding_sparse_matrices} and \ref{thm::matrix_inversion_by_qsvt}, we can see that using the aforementioned construction, we can perform matrix inversion by QSVT in time $O(\kappa \, \text{poly}\log(N) \log(\kappa / \varepsilon))$, retaining the exponential quantum speedup with respect to the matrix size. This furthermore outperforms the HHL algorithm with respect to both precision and the condition number, which has a complexity of $O(\kappa^2 \log(N) / \varepsilon)$ \cite{harrow2009quantum}.
+Physically, a banded circulant matrix corresponds to the adjacency matrix of a cycle graph.
+
+Reference \cite{camps2203explicit} shows how to construct polynomial-size sparse-access oracles for this class of matrices, for which we show a high-level sketch in Figure \ref{fig::block_encoding_circuit}. In particular, the authors show how to construct $O_A$ in $O(1)$ time and $O_c$ in $O(\text{poly}\log(N))$ time. Combining this with Theorems \ref{thm::block_encoding_sparse_matrices} and \ref{thm::matrix_inversion_by_qsvt}, we can see that using the aforementioned construction, we can perform matrix inversion by QSVT in time $O(\kappa \, \text{poly}\log(N) \log(\kappa / \varepsilon))$, retaining the exponential quantum speedup with respect to the matrix size. This furthermore outperforms the HHL algorithm with respect to both precision and the condition number, which has a complexity of $O(\kappa^2 \log(N) / \varepsilon)$ \cite{harrow2009quantum}.
 
 \begin{figure}
 	\centering
@@ -134,8 +134,25 @@ Reference \cite{camps2203explicit} shows how to construct polynomial-size sparse
 		& \gate{H} & \qw & \octrl{-1} & \ctrl{-1} & \octrl{-1} & \qw & \ctrl{1} & \qw & \qw & \gate{H} & \qw \\
 		& \qwbundle{n = \ceil{\log{N}}} & \qw & \qw & \qw & \qw & \hphantomgate{} & \gate{L} & \gate{R} & \qw & \qw & \qw
 	\end{quantikz}
-	\caption{Quantum circuit for block-encoding an $N \times N$ banded circulant matrix, adapted from \cite{camps2203explicit}. For $n = \ceil{\log{N}}$ qubits, the $L$ and $R$ gates each consist of $n$ multi-controlled \textsc{NOT} gates with successively decreasing numbers of controls.}
+	\caption{Quantum circuit for block-encoding an $N \times N$ banded circulant matrix, adapted from \cite{camps2203explicit}. For $n = \ceil{\log{N}}$ qubits, the $L$ and $R$ gates each consist of $n$ multi-controlled \textsc{NOT} gates with successively decreasing numbers of controls (see Figure \ref{fig::shift_gate_circuits}).}
 	\label{fig::block_encoding_circuit}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{quantikz}
+		\lstick[3]{$n$} & & \targ{} & \qw & \qw & \qw \\
+		& & \ctrl{-1} & \targ{} & \qw & \qw \\
+		& & \ctrl{-1} & \ctrl{-1} & \gate{X} & \qw
+	\end{quantikz}
+	\quad
+	\begin{quantikz}
+		\qw & \targ{} & \qw & \qw & \qw \\
+		\qw & \octrl{-1} & \targ{} & \qw & \qw \\
+		\qw & \octrl{-1} & \octrl{-1} & \gate{X} & \qw
+	\end{quantikz}
+	\caption{Quantum circuits for the $L$ and $R$ gates respectively, with $n=3$ qubits.}
+	\label{fig::shift_gate_circuits}
 \end{figure}
 
 \section{Results}
@@ -144,16 +161,16 @@ The resource estimates were generated by exporting Qiskit QSVT circuits to OpenQ
 
 \subsection{Qubit counts}
 
-Figure \ref{fig::qre_qubits} shows how the logical and physical resource estimates scale with the input size. Whilst the logical qubit estimates conform very naturally with the expected logarithmic growth, the physical estimates scale much more erratically, most likely due to the lack of a consistent structure between problem instances when transpiling error-corrected circuits to the physical layout. In the interest of extrapolating to worst-case resource estimates, we consider the instances which outperform an instance of smaller size to be outliers (indicated with hollow markers in Figure \ref{fig::qre_qubits}). Promisingly, despite the somewhat chaotic results, the physical resource estimates nonetheless seem to likewise conform to a logarithmic growth with $N$.
+Figure \ref{fig::qre_qubits} shows how the logical and physical resource estimates scale with the input size. Whilst the logical qubit estimates conform very naturally with the expected logarithmic growth, the physical estimates scale much more erratically, most likely due to the lack of a consistent structure between problem instances when transpiling error-corrected circuits to the physical layout. In the interest of extrapolating to worst-case resource estimates, we mark as outliers the instances which outperform an instance of smaller size (indicated with hollow markers in Figure \ref{fig::qre_qubits}). Promisingly, despite the somewhat irregular results, the physical resource estimates nonetheless likewise conform to a logarithmic growth with $N$.
 
-The logarithmic best-fit functions, computed using NumPy's polyfit function, are as follows:
+The logarithmic best-fit functions, computed using NumPy's polyfit, are roughly:
 \begin{align*}
-	y_\text{logical} &= 3.607 \log{N} + 15.214, \\
-	y_\text{physical} &= 67769.490 \log{N} + 219131.346,
+	y_\text{logical} &\approx 3.61 \log{N} + 15.2, \\
+	y_\text{physical} &\approx 67800 \log{N} + 219000,
 \end{align*}
 where $\log$ denotes the natural logarithm.
 
-Although highly impractical for small problem sizes due to the large constant factors, the data would seem to empirically imply that a reasonably achievable number of physical qubits will be able to tackle problems of classically intractable sizes. For example, if the extrapolation of the physical qubit requirements remains accurate for large inputs, a $10^{100}$-dimensional banded circulant matrix could be inverted using under 16 million physical qubits.
+Although highly impractical for small problem sizes due to the large constant factors, the data would seem to empirically imply that a realistically achievable number of physical qubits will be able to tackle problems of classically intractable sizes. For example, if the extrapolation of the physical qubit requirements remains accurate for large inputs, a $10^{100}$-dimensional banded circulant matrix could be inverted using under 16 million physical qubits.
 
 \begin{figure}
 	\centering
@@ -174,21 +191,38 @@ Although highly impractical for small problem sizes due to the large constant fa
 
 \subsection{Runtimes}
 
-Figure \ref{fig::qre_runtime} shows how the runtime estimates scale with the input size. In this case, the runtime of matrix inversion by QSVT is clearly not scaling with the ideal polylogarithmic growth.
+Figure \ref{fig::qre_runtime} shows how the runtime estimates scale with the input size. In this case, the asymptotic growth of the runtime at first glance appears linear as opposed to the desired polylogarithmic growth.
 
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
-		\begin{axis}[xlabel=Matrix dimension, ylabel=Runtime (seconds), width=8.75cm, height=6cm, legend style={at={(0,1)}, anchor = south west}]
+		\begin{axis}[xlabel=Matrix dimension, ylabel=Runtime (seconds), width=8.75cm, height=6cm, legend style={at={(0,1)}, anchor = north west}]
+			\addplot[domain = 4:256, samples=100, smooth, thick, dashed, color=blue] {0.30803527840088796*ln(x)^3 - 1.771517817276902*ln(x)^2 + 3.424306187979826*ln(x) - 2.033572179167546};
+			\addlegendentry{Polylogarithmic fit};
+			\addplot[domain = 4:256, samples=100, smooth, thick, dashed, color=red] {0.06069840030772014*x - 0.27568390804597964};
+			\addlegendentry{Linear fit};
 			\addplot[mark=*, only marks, color=blue] coordinates{(4,0.106)(8,0.209)(16,0.590)(32,1)(64,4)(128,8)(256,15)};
-			\addplot[domain = 4:256, samples=100, smooth, thick, dashed, color=blue] {0.06069840030772014*x - 0.27568390804597964};
 		\end{axis}
 	\end{tikzpicture}
 	\caption{Resource estimates for the running time of matrix inversion by QSVT.}
 	\label{fig::qre_runtime}
 \end{figure}
 
-\newpage
+To diagnose this issue, we first note that the only circuit elements that change size between instances are the $L$ and $R$ gates (see Figure \ref{fig::block_encoding_circuit}) which ultimately consist of several multi-controlled \textsc{NOT} gates (see Figure \ref{fig::shift_gate_circuits}). In the exploratory notebook \textsc{qiskit\_transpilation.ipynb}, we have empirically found the runtime of Qiskit's transpilation of multi-controlled gates to scale as $O(n^2)$, implying a `naive' implementation such as the construction found in \cite{barenco1995elementary}. With the number of such gates present in the block-encoding circuit, we should then expect to see a runtime scaling of $O(n^3) = O(\log^3{N})$. Fitting the data to a degree-3 polylogarithmic function using SciPy's curve\_fit yields
+\[
+	y_\text{runtime} = 0.308 \log^3{N} - 1.77 \log^2{N} + 3.42 \log{N} - 2.03
+\]
+which indeed conforms to the dataset with a smaller average error than the linear fit. If the extrapolation to higher dimensional matrices remains accurate, with this implementation a $10^{10}$-dimensional banded circulant matrix could be inverted on a quantum computer in about one hour.
+
+\section{Conclusion and discussion}
+
+Whilst of significant practical relevance, quantum algorithms for solving SLEs are still predominantly presented in a complexity-theoretic and oracular, rather than a practical, setting. In this project, we have built explicit quantum circuits for solving SLEs by QSVT for a specific class of sparse matrices, and evaluated the end-to-end physical resource requirements using Microsoft's Azure Quantum Resource Estimator.
+
+Our findings show that both the logical and physical qubit count estimates adhere to the expected logarithmic growth, and that a realistically achievable number of physical qubits may suffice to demonstrate quantum advantage for matrix inversion.
+
+The resource estimates for runtime seem to display a lesser degree of certainty in their asymptotic growth with matrix size, but we can deduce theoretically that we should expect to see a growth which scales as $O(\log^3{N})$. Fitting the data as such, if the behaviour remains consistent when extrapolated to large matrix sizes, we should likewise expect a reasonable amount of time to suffice to invert matrices of classically challenging sizes.
+
+There is, however, further room for optimisation in these estimates. When scaling to large matrices, we are bottlenecked by the many multi-controlled \textsc{NOT} gates present in $O_c$ (see Figure \ref{fig::shift_gate_circuits}). Qiskit appears to transpile such gates into circuits of depth $O(n^2)$, resulting in an overall complexity for $O_c$ of $O(\log^3{N})$. The best way to transpile multi-controlled gates is an area of active research, with recent theoretical results achieving depths as low as $O(\log^3{n})$ \cite{claudon2024polylogarithmic}. With the $n \sim \log{N}$ gates present in $L$ and $R$, this would imply an overall runtime which scales with input size as $O(n \log^3{n}) = O(\log{N} \log^3{\log{N}} )$. If and by how much these results reduce resource requirements in practice remains an open question and a potential direction for future work.
 
 \printbibliography
 

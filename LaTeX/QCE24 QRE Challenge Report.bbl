@@ -298,38 +298,127 @@
       \field{title}{Generalized Quantum Singular Value Transformation}
       \field{year}{2023}
     \endentry
-    \entry{da2022linear}{article}{}
-      \name{author}{2}{}{%
-        {{hash=292bfffb7b170613368bece46fba2b99}{%
-           family={Da\bibnamedelima Silva},
-           familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod},
-           given={Adenilton\bibnamedelima J},
-           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-        {{hash=a47d3f2a783e7cf40d5b8c69c5015004}{%
-           family={Park},
-           familyi={P\bibinitperiod},
-           given={Daniel\bibnamedelima K},
-           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+    \entry{barenco1995elementary}{article}{}
+      \name{author}{9}{}{%
+        {{hash=e3e201649629042ff492419e0964751f}{%
+           family={Barenco},
+           familyi={B\bibinitperiod},
+           given={Adriano},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9e07e222475916c813dd37c28db7c325}{%
+           family={Bennett},
+           familyi={B\bibinitperiod},
+           given={Charles\bibnamedelima H},
+           giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=bcc1d99f54046308388d253fdacfe211}{%
+           family={Cleve},
+           familyi={C\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=eb086f2913454eb2d88cdec4631aeb3e}{%
+           family={DiVincenzo},
+           familyi={D\bibinitperiod},
+           given={David\bibnamedelima P},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=11dbdbe4f34b5ff267ac25a128c070f6}{%
+           family={Margolus},
+           familyi={M\bibinitperiod},
+           given={Norman},
+           giveni={N\bibinitperiod}}}%
+        {{hash=3ad573118bab03bfc277b1e4925528ab}{%
+           family={Shor},
+           familyi={S\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=f5744732128174bb29d3982413773787}{%
+           family={Sleator},
+           familyi={S\bibinitperiod},
+           given={Tycho},
+           giveni={T\bibinitperiod}}}%
+        {{hash=5509489ab50cd678d68437275b870be5}{%
+           family={Smolin},
+           familyi={S\bibinitperiod},
+           given={John\bibnamedelima A},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=ebdf6a8a3edc28cc9c608fabbd805369}{%
+           family={Weinfurter},
+           familyi={W\bibinitperiod},
+           given={Harald},
+           giveni={H\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {APS}%
       }
-      \strng{namehash}{7cb915ecc3c9eb45aa158d1b04bc569c}
-      \strng{fullhash}{7cb915ecc3c9eb45aa158d1b04bc569c}
-      \strng{bibnamehash}{7cb915ecc3c9eb45aa158d1b04bc569c}
-      \strng{authorbibnamehash}{7cb915ecc3c9eb45aa158d1b04bc569c}
-      \strng{authornamehash}{7cb915ecc3c9eb45aa158d1b04bc569c}
-      \strng{authorfullhash}{7cb915ecc3c9eb45aa158d1b04bc569c}
+      \strng{namehash}{063222b8f933928fb89de94e22677c8b}
+      \strng{fullhash}{d88cbb1002350bf2344fb9ab8d1f03a2}
+      \strng{bibnamehash}{063222b8f933928fb89de94e22677c8b}
+      \strng{authorbibnamehash}{063222b8f933928fb89de94e22677c8b}
+      \strng{authornamehash}{063222b8f933928fb89de94e22677c8b}
+      \strng{authorfullhash}{d88cbb1002350bf2344fb9ab8d1f03a2}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Physical Review A}
-      \field{number}{4}
-      \field{title}{Linear-depth quantum circuits for multiqubit controlled gates}
-      \field{volume}{106}
-      \field{year}{2022}
-      \field{pages}{042602}
+      \field{journaltitle}{Physical review A}
+      \field{number}{5}
+      \field{title}{Elementary gates for quantum computation}
+      \field{volume}{52}
+      \field{year}{1995}
+      \field{pages}{3457}
+      \range{pages}{1}
+    \endentry
+    \entry{claudon2024polylogarithmic}{article}{}
+      \name{author}{6}{}{%
+        {{hash=0ea4f75480241a53dc6bc80e1a99cc66}{%
+           family={Claudon},
+           familyi={C\bibinitperiod},
+           given={Baptiste},
+           giveni={B\bibinitperiod}}}%
+        {{hash=81b37a36e5002c85d6502a7d6a30a08f}{%
+           family={Zylberman},
+           familyi={Z\bibinitperiod},
+           given={Julien},
+           giveni={J\bibinitperiod}}}%
+        {{hash=620053e300740df431a4a48f804669f4}{%
+           family={Feniou},
+           familyi={F\bibinitperiod},
+           given={César},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e03d77aa54e832766b24a43a5e0e5e70}{%
+           family={Debbasch},
+           familyi={D\bibinitperiod},
+           given={Fabrice},
+           giveni={F\bibinitperiod}}}%
+        {{hash=da632f662bb1ab5c3e05ddb80b6cd201}{%
+           family={Peruzzo},
+           familyi={P\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b0f78eac0ba5ad81b618ba37a6008619}{%
+           family={Piquemal},
+           familyi={P\bibinitperiod},
+           given={Jean-Philip},
+           giveni={J\bibinithyphendelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group UK London}%
+      }
+      \strng{namehash}{46fbcca39f3eec650943c584a04559d5}
+      \strng{fullhash}{b835011a4e06db3438c1686462002f29}
+      \strng{bibnamehash}{46fbcca39f3eec650943c584a04559d5}
+      \strng{authorbibnamehash}{46fbcca39f3eec650943c584a04559d5}
+      \strng{authornamehash}{46fbcca39f3eec650943c584a04559d5}
+      \strng{authorfullhash}{b835011a4e06db3438c1686462002f29}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature Communications}
+      \field{number}{1}
+      \field{title}{Polylogarithmic-depth controlled-NOT gates without ancilla qubits}
+      \field{volume}{15}
+      \field{year}{2024}
+      \field{pages}{5886}
       \range{pages}{1}
     \endentry
   \enddatalist
