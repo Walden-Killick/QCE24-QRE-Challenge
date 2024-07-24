@@ -1,349 +1,349 @@
 OPENQASM 2.0;
 include "qelib1.inc";
 gate mcx q0,q1,q2,q3 { h q3; p(pi/8) q0; p(pi/8) q1; p(pi/8) q2; p(pi/8) q3; cx q0,q1; p(-pi/8) q1; cx q0,q1; cx q1,q2; p(-pi/8) q2; cx q0,q2; p(pi/8) q2; cx q1,q2; p(-pi/8) q2; cx q0,q2; cx q2,q3; p(-pi/8) q3; cx q1,q3; p(pi/8) q3; cx q2,q3; p(-pi/8) q3; cx q0,q3; p(pi/8) q3; cx q2,q3; p(-pi/8) q3; cx q1,q3; p(pi/8) q3; cx q2,q3; p(-pi/8) q3; cx q0,q3; h q3; }
-gate mcx_139628903423840 q0,q1,q2,q3 { mcx q0,q1,q2,q3; }
-gate mcx_o0 q0,q1,q2,q3 { x q0; x q1; x q2; mcx_139628903423840 q0,q1,q2,q3; x q0; x q1; x q2; }
-gate ccry(param0) q0,q1,q2 { ry(1.8206497240965724) q2; ccx q0,q1,q2; ry(-1.8206497240965724) q2; ccx q0,q1,q2; }
-gate ccry_o0(param0) q0,q1,q2 { x q0; x q1; ccry(3.641299448193145) q0,q1,q2; x q0; x q1; }
-gate ccry_139628903860544(param0) q0,q1,q2 { ry(1.4275497044966923) q2; ccx q0,q1,q2; ry(-1.4275497044966923) q2; ccx q0,q1,q2; }
-gate ccry_o1(param0) q0,q1,q2 { x q1; ccry_139628903860544(2.8550994089933845) q0,q1,q2; x q1; }
-gate ccry_139628903860640(param0) q0,q1,q2 { ry(0.8260880944322267) q2; ccx q0,q1,q2; ry(-0.8260880944322267) q2; ccx q0,q1,q2; }
-gate ccry_o2(param0) q0,q1,q2 { x q0; ccry_139628903860640(1.6521761888644535) q0,q1,q2; x q0; }
+gate mcx_140162333258704 q0,q1,q2,q3 { mcx q0,q1,q2,q3; }
+gate mcx_o0 q0,q1,q2,q3 { x q0; x q1; x q2; mcx_140162333258704 q0,q1,q2,q3; x q0; x q1; x q2; }
+gate ccry(param0) q0,q1,q2 { ry(1.7909460398530486) q2; ccx q0,q1,q2; ry(-1.7909460398530486) q2; ccx q0,q1,q2; }
+gate ccry_o0(param0) q0,q1,q2 { x q0; x q1; ccry(3.581892079706097) q0,q1,q2; x q0; x q1; }
+gate ccry_140162333799232(param0) q0,q1,q2 { ry(0.8007393560438562) q2; ccx q0,q1,q2; ry(-0.8007393560438562) q2; ccx q0,q1,q2; }
+gate ccry_o1(param0) q0,q1,q2 { x q1; ccry_140162333799232(1.6014787120877123) q0,q1,q2; x q1; }
+gate ccry_140162333789056(param0) q0,q1,q2 { ry(1.0987107714400006) q2; ccx q0,q1,q2; ry(-1.0987107714400006) q2; ccx q0,q1,q2; }
+gate ccry_o2(param0) q0,q1,q2 { x q0; ccry_140162333789056(2.1974215428800012) q0,q1,q2; x q0; }
 gate mcphase(param0) q0,q1 { cp(-pi/4) q0,q1; }
-gate mcphase_139628903418416(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903424320(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903428544(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903420672(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903421104(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903426528(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903424176(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903418608(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903430656(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903426336(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903426288(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903430944(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903516528(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903518640(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903523104(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903517056(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903518688(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903516816(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903525024(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903518832(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903519600(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903523920(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903519504(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903528720(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903520944(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903516864(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903520128(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903519696(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903199504(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903201664(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903200080(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903201088(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903201424(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628903202240(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906815904(param0) q0,q1 { cp(pi/32) q0,q1; }
-gate mcphase_139628904475824(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628913958848(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628913956880(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628913962448(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628913959568(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628913964416(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628913957840(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628913960144(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628913951600(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628913960912(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628913963408(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628913966912(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628913950784(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628913958128(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628906657056(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate cL q0,q1,q2,q3,q4,q5,q6 { cu(pi/2,0,pi,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628903418416(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628903424320(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_139628903428544(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628903420672(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628903421104(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_139628903426528(pi/4) q0,q6; ccx q0,q5,q6; mcphase_139628903424176(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_139628903418608(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/4,-pi/2,3*pi/4,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628903430656(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628903426336(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_139628903426288(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628903430944(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628903516528(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_139628903518640(pi/4) q0,q6; ccx q0,q5,q6; mcphase_139628903523104(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_139628903517056(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_139628903518688(pi/4) q0,q5; ccx q0,q2,q5; mcphase_139628903516816(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_139628903525024(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_139628903518832(pi/4) q0,q5; ccx q0,q4,q5; mcphase_139628903519600(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_139628903523920(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/8,-pi/2,3*pi/4,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_139628903519504(pi/4) q0,q5; ccx q0,q2,q5; mcphase_139628903528720(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_139628903520944(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_139628903516864(pi/4) q0,q5; ccx q0,q4,q5; mcphase_139628903520128(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_139628903519696(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628903199504(pi/4) q0,q4; ccx q0,q2,q4; mcphase_139628903201664(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_139628903200080(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; cu(pi/2,0,-15*pi/16,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628903201088(pi/4) q0,q4; ccx q0,q2,q4; mcphase_139628903201424(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_139628903202240(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cp(pi/32) q0,q2; ccx q0,q1,q2; cp(-pi/32) q0,q2; ccx q0,q1,q2; mcphase_139628906815904(pi/32) q0,q1; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; cu(0,-3.043417883165112,-3.0434178831651124,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; cu(pi/2,pi/8,-3*pi/4,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/32) q1; cx q0,q1; u(0,0,-pi/32) q1; cx q0,q1; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; cu(pi/2,0,pi,0) q0,q4; mcphase_139628904475824(pi/8) q0,q4; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q1,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q1,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q2,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q2,q3; mcphase_139628913958848(pi/8) q0,q2; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; mcphase_139628913956880(pi/8) q0,q1; ccx q0,q1,q2; mcphase_139628913962448(-pi/8) q0,q2; ccx q0,q1,q2; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; mcphase_139628913959568(pi/8) q0,q3; ccx q0,q2,q3; mcphase_139628913964416(-pi/8) q0,q3; ccx q0,q1,q3; mcphase_139628913957840(pi/8) q0,q3; ccx q0,q2,q3; mcphase_139628913960144(-pi/8) q0,q3; ccx q0,q1,q3; ccx q0,q3,q4; mcphase_139628913951600(-pi/8) q0,q4; ccx q0,q2,q4; mcphase_139628913960912(pi/8) q0,q4; ccx q0,q3,q4; mcphase_139628913963408(-pi/8) q0,q4; ccx q0,q1,q4; mcphase_139628913966912(pi/8) q0,q4; ccx q0,q3,q4; mcphase_139628913950784(-pi/8) q0,q4; ccx q0,q2,q4; mcphase_139628913958128(pi/8) q0,q4; ccx q0,q3,q4; cu(pi/2,0,pi,0) q0,q3; ccx q0,q2,q3; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; mcphase_139628906657056(-pi/8) q0,q4; ccx q0,q1,q4; ccx q0,q1,q3; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; ccx q0,q2,q3; u(0,0,pi/8) q2; cx q0,q2; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; ccx q0,q1,q2; u(0,0,pi/8) q1; cx q0,q1; u(0,0,-pi/8) q1; cx q0,q1; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,pi/8) q2; cx q0,q2; ccx q0,q1,q2; ccx q0,q1,q2; cx q0,q1; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,pi/4,-3*pi/4,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; p(6.1850105367549055) q0; }
-gate mcphase_139628906941216(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906951296(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906942656(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906938720(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906945152(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906941120(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906947600(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906948224(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906953984(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906938480(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906947024(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906946784(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906950096(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906952832(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906952736(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906948944(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906944432(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906940064(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906952784(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906950576(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906939536(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906941648(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906954464(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906950624(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906948560(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906948368(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906953840(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906942944(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628905357152(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628905349664(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628913743840(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628913741248(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628913739952(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628913740000(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628905829264(param0) q0,q1 { cp(pi/32) q0,q1; }
-gate mcphase_139628905832720(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628905834352(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628905828400(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628905839824(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628905840208(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628905825904(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628905830032(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628905824416(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139631172146832(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139631172145968(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628914535840(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628914539056(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628914536128(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628911926896(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628911920848(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate cR q0,q1,q2,q3,q4,q5,q6 { cx q0,q1; cx q0,q2; cx q0,q3; cx q0,q4; cx q0,q5; cu(pi/2,0,pi,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628906941216(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628906951296(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_139628906942656(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628906938720(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628906945152(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_139628906941120(pi/4) q0,q6; ccx q0,q5,q6; mcphase_139628906947600(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_139628906948224(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/4,-pi/2,3*pi/4,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628906953984(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628906938480(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_139628906947024(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628906946784(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628906950096(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_139628906952832(pi/4) q0,q6; ccx q0,q5,q6; mcphase_139628906952736(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_139628906948944(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_139628906944432(pi/4) q0,q5; ccx q0,q2,q5; mcphase_139628906940064(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_139628906952784(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_139628906950576(pi/4) q0,q5; ccx q0,q4,q5; mcphase_139628906939536(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_139628906941648(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/8,-pi/2,3*pi/4,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_139628906954464(pi/4) q0,q5; ccx q0,q2,q5; mcphase_139628906950624(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_139628906948560(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_139628906948368(pi/4) q0,q5; ccx q0,q4,q5; mcphase_139628906953840(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_139628906942944(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628905357152(pi/4) q0,q4; ccx q0,q2,q4; mcphase_139628905349664(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_139628913743840(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; cu(pi/2,0,-15*pi/16,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628913741248(pi/4) q0,q4; ccx q0,q2,q4; mcphase_139628913739952(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_139628913740000(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cp(pi/32) q0,q2; ccx q0,q1,q2; cp(-pi/32) q0,q2; ccx q0,q1,q2; mcphase_139628905829264(pi/32) q0,q1; cx q0,q1; cx q0,q1; cx q0,q2; cx q0,q2; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; cx q0,q3; cx q0,q3; cu(0,-3.043417883165112,-3.0434178831651124,0) q0,q4; cx q0,q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; cu(pi/2,pi/8,-3*pi/4,0) q0,q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/32) q1; cx q0,q1; u(0,0,-pi/32) q1; cx q0,q1; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; mcphase_139628905832720(pi/8) q0,q4; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q1,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q1,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q2,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q2,q3; cx q0,q2; cx q0,q2; mcphase_139628905834352(pi/8) q0,q2; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; cx q0,q1; cx q0,q1; mcphase_139628905828400(pi/8) q0,q1; ccx q0,q1,q2; mcphase_139628905839824(-pi/8) q0,q2; ccx q0,q1,q2; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; cx q0,q3; cx q0,q3; mcphase_139628905840208(pi/8) q0,q3; ccx q0,q2,q3; mcphase_139628905825904(-pi/8) q0,q3; ccx q0,q1,q3; mcphase_139628905830032(pi/8) q0,q3; ccx q0,q2,q3; mcphase_139628905824416(-pi/8) q0,q3; ccx q0,q1,q3; ccx q0,q3,q4; mcphase_139631172146832(-pi/8) q0,q4; ccx q0,q2,q4; mcphase_139631172145968(pi/8) q0,q4; ccx q0,q3,q4; mcphase_139628914535840(-pi/8) q0,q4; ccx q0,q1,q4; mcphase_139628914539056(pi/8) q0,q4; ccx q0,q3,q4; mcphase_139628914536128(-pi/8) q0,q4; ccx q0,q2,q4; cx q0,q2; cx q0,q2; mcphase_139628911926896(pi/8) q0,q4; ccx q0,q3,q4; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; ccx q0,q2,q3; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; mcphase_139628911920848(-pi/8) q0,q4; ccx q0,q1,q4; cx q0,q1; cx q0,q1; ccx q0,q1,q3; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; ccx q0,q2,q3; u(0,0,pi/8) q2; cx q0,q2; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; ccx q0,q1,q2; u(0,0,pi/8) q1; cx q0,q1; u(0,0,-pi/8) q1; cx q0,q1; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,pi/8) q2; cx q0,q2; ccx q0,q1,q2; cx q0,q1; cx q0,q1; cx q0,q2; ccx q0,q1,q2; cx q0,q1; cx q0,q1; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,pi/4,-3*pi/4,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; p(6.185010536754906) q0; }
-gate gate_U_A q0,q1,q2,q3,q4,q5,q6,q7,q8 { h q1; h q2; ccry_o0(3.641299448193145) q1,q2,q0; ccry_o1(2.8550994089933845) q1,q2,q0; ccry_o2(1.6521761888644535) q1,q2,q0; cL q1,q3,q4,q5,q6,q7,q8; cR q2,q3,q4,q5,q6,q7,q8; h q1; h q2; }
-gate mcphase_139628903975088(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628903984688(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628903979408(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628903981760(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628903978448(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628903977104(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628903976192(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628903985696(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628903978592(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628903973792(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628903985600(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628903976144(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628903981952(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628903979264(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628903980128(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628911555632(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628911557216(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628911546608(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628914675424(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628914684352(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628916416928(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628916414000(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628916411648(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628916423072(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628916411312(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628916411360(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628916421728(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628916410400(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628916423696(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628916409776(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628918358704(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628914138688(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628914132400(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628914137152(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628914132112(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628914132448(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628914137344(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628914131728(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628914142096(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628914133552(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628914134080(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628914145984(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628914137536(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628905925888(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628905926608(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628905935056(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628905928768(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628905925408(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628905923344(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628905937984(param0) q0,q1 { cp(pi/32) q0,q1; }
-gate cR_dg q0,q1,q2,q3,q4,q5,q6 { cx q0,q1; cx q0,q1; ccx q0,q1,q2; cx q0,q1; cx q0,q1; cx q0,q2; cu(pi/2,0,pi,0) q0,q3; ccx q0,q2,q3; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; ccx q0,q2,q3; u(0,0,pi/8) q2; cx q0,q2; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; ccx q0,q1,q2; u(0,0,pi/8) q1; cx q0,q1; u(0,0,-pi/8) q1; cx q0,q1; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,pi/8) q2; cx q0,q2; ccx q0,q1,q2; cx q0,q1; cx q0,q1; mcphase_139628903975088(pi/8) q0,q1; cx q0,q2; cx q0,q2; mcphase_139628903984688(pi/8) q0,q2; ccx q0,q1,q2; mcphase_139628903979408(-pi/8) q0,q2; ccx q0,q1,q2; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; cx q0,q3; mcphase_139628903981760(pi/8) q0,q3; ccx q0,q2,q3; mcphase_139628903978448(-pi/8) q0,q3; ccx q0,q1,q3; mcphase_139628903977104(pi/8) q0,q3; ccx q0,q2,q3; mcphase_139628903976192(-pi/8) q0,q3; ccx q0,q1,q3; cu(pi/2,0,pi,0) q0,q4; mcphase_139628903985696(pi/8) q0,q4; ccx q0,q3,q4; mcphase_139628903978592(-pi/8) q0,q4; ccx q0,q2,q4; mcphase_139628903973792(pi/8) q0,q4; ccx q0,q3,q4; mcphase_139628903985600(-pi/8) q0,q4; ccx q0,q1,q4; mcphase_139628903976144(pi/8) q0,q4; ccx q0,q3,q4; mcphase_139628903981952(-pi/8) q0,q4; ccx q0,q2,q4; cx q0,q2; cx q0,q2; mcphase_139628903979264(pi/8) q0,q4; ccx q0,q3,q4; cx q0,q3; cx q0,q3; mcphase_139628903980128(-pi/8) q0,q4; ccx q0,q1,q4; cx q0,q1; cx q0,q1; cu(pi/2,0,pi,0) q0,q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/32) q1; cx q0,q1; u(0,0,-pi/32) q1; cx q0,q1; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; cx q0,q4; cx q0,q4; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q1,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q1,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q2,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q2,q3; cx q0,q2; cx q0,q2; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; cx q0,q1; cx q0,q1; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; cx q0,q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628911555632(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628911557216(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_139628911546608(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628914675424(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628914684352(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_139628916416928(pi/4) q0,q6; ccx q0,q5,q6; mcphase_139628916414000(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_139628916411648(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/4,-pi/2,3*pi/4,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628916423072(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628916411312(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_139628916411360(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628916421728(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628916410400(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_139628916423696(pi/4) q0,q6; ccx q0,q5,q6; mcphase_139628916409776(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_139628918358704(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_139628914138688(pi/4) q0,q5; ccx q0,q2,q5; mcphase_139628914132400(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_139628914137152(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_139628914132112(pi/4) q0,q5; ccx q0,q4,q5; mcphase_139628914132448(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_139628914137344(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/8,-pi/2,3*pi/4,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_139628914131728(pi/4) q0,q5; ccx q0,q2,q5; mcphase_139628914142096(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_139628914133552(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_139628914134080(pi/4) q0,q5; ccx q0,q4,q5; mcphase_139628914145984(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_139628914137536(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628905925888(pi/4) q0,q4; ccx q0,q2,q4; mcphase_139628905926608(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_139628905935056(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; cu(pi/2,0,-15*pi/16,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628905928768(pi/4) q0,q4; ccx q0,q2,q4; mcphase_139628905925408(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_139628905923344(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cp(pi/32) q0,q2; ccx q0,q1,q2; cp(-pi/32) q0,q2; ccx q0,q1,q2; mcphase_139628905937984(pi/32) q0,q1; cx q0,q1; cx q0,q2; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; cx q0,q3; cu(0,-3.043417883165112,-3.0434178831651124,0) q0,q4; cx q0,q4; cu(pi/2,pi/8,-3*pi/4,0) q0,q5; cx q0,q5; cu(pi/2,pi/4,-3*pi/4,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; p(6.1850105367549055) q0; }
-gate mcphase_139628905926080(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628905923776(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628905923440(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628905925120(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628905926800(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628905928720(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628905934144(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628905933568(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628905932224(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628905928672(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628905934672(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628905929488(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628905930016(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628915057488(param0) q0,q1 { cp(pi/8) q0,q1; }
-gate mcphase_139628915063104(param0) q0,q1 { cp(-pi/8) q0,q1; }
-gate mcphase_139628911194224(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628917051776(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628917048992(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628917049664(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628917050960(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628917052400(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628917060560(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628917055424(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628917054128(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628917055664(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628917056576(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628917057440(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906488464(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906490768(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906486448(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906491440(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906487552(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906485968(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906489568(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906480784(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906493600(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906485680(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906479728(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906482464(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906482176(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906495808(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906493936(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906483088(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906486256(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906495184(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906489664(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906493024(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906492304(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906490624(param0) q0,q1 { cp(pi/4) q0,q1; }
-gate mcphase_139628906484192(param0) q0,q1 { cp(pi/32) q0,q1; }
-gate cL_dg q0,q1,q2,q3,q4,q5,q6 { cx q0,q1; ccx q0,q1,q2; cu(pi/2,0,pi,0) q0,q3; ccx q0,q2,q3; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; ccx q0,q2,q3; u(0,0,pi/8) q2; cx q0,q2; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; ccx q0,q1,q2; u(0,0,pi/8) q1; cx q0,q1; u(0,0,-pi/8) q1; cx q0,q1; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,pi/8) q2; cx q0,q2; ccx q0,q1,q2; mcphase_139628905926080(pi/8) q0,q1; mcphase_139628905923776(pi/8) q0,q2; ccx q0,q1,q2; mcphase_139628905923440(-pi/8) q0,q2; ccx q0,q1,q2; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; mcphase_139628905925120(pi/8) q0,q3; ccx q0,q2,q3; mcphase_139628905926800(-pi/8) q0,q3; ccx q0,q1,q3; mcphase_139628905928720(pi/8) q0,q3; ccx q0,q2,q3; mcphase_139628905934144(-pi/8) q0,q3; ccx q0,q1,q3; cu(pi/2,0,pi,0) q0,q4; mcphase_139628905933568(pi/8) q0,q4; ccx q0,q3,q4; mcphase_139628905932224(-pi/8) q0,q4; ccx q0,q2,q4; mcphase_139628905928672(pi/8) q0,q4; ccx q0,q3,q4; mcphase_139628905934672(-pi/8) q0,q4; ccx q0,q1,q4; mcphase_139628905929488(pi/8) q0,q4; ccx q0,q3,q4; mcphase_139628905930016(-pi/8) q0,q4; ccx q0,q2,q4; mcphase_139628915057488(pi/8) q0,q4; ccx q0,q3,q4; mcphase_139628915063104(-pi/8) q0,q4; ccx q0,q1,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/32) q1; cx q0,q1; u(0,0,-pi/32) q1; cx q0,q1; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q1,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q1,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q2,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q2,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628911194224(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628917051776(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_139628917048992(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628917049664(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628917050960(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_139628917052400(pi/4) q0,q6; ccx q0,q5,q6; mcphase_139628917060560(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_139628917055424(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/4,-pi/2,3*pi/4,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628917054128(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628917055664(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_139628917056576(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_139628917057440(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628906488464(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_139628906490768(pi/4) q0,q6; ccx q0,q5,q6; mcphase_139628906486448(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_139628906491440(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_139628906487552(pi/4) q0,q5; ccx q0,q2,q5; mcphase_139628906485968(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_139628906489568(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_139628906480784(pi/4) q0,q5; ccx q0,q4,q5; mcphase_139628906493600(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_139628906485680(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/8,-pi/2,3*pi/4,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_139628906479728(pi/4) q0,q5; ccx q0,q2,q5; mcphase_139628906482464(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_139628906482176(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_139628906495808(pi/4) q0,q5; ccx q0,q4,q5; mcphase_139628906493936(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_139628906483088(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628906486256(pi/4) q0,q4; ccx q0,q2,q4; mcphase_139628906495184(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_139628906489664(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; cu(pi/2,0,-15*pi/16,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_139628906493024(pi/4) q0,q4; ccx q0,q2,q4; mcphase_139628906492304(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_139628906490624(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cp(pi/32) q0,q2; ccx q0,q1,q2; cp(-pi/32) q0,q2; ccx q0,q1,q2; mcphase_139628906484192(pi/32) q0,q1; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; cu(0,-3.043417883165112,-3.0434178831651124,0) q0,q4; cu(pi/2,pi/8,-3*pi/4,0) q0,q5; cu(pi/2,pi/4,-3*pi/4,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; p(6.1850105367549055) q0; }
-gate ccry_139628906863136(param0) q0,q1,q2 { ry(-0.8260880944322267) q2; ccx q0,q1,q2; ry(0.8260880944322267) q2; ccx q0,q1,q2; }
-gate ccry_o2_139628905926416_o2(param0) q0,q1,q2 { x q0; ccry_139628906863136(-1.6521761888644535) q0,q1,q2; x q0; }
-gate ccry_139628906872448(param0) q0,q1,q2 { ry(-1.4275497044966923) q2; ccx q0,q1,q2; ry(1.4275497044966923) q2; ccx q0,q1,q2; }
-gate ccry_o1_139628906484960_o1(param0) q0,q1,q2 { x q1; ccry_139628906872448(-2.8550994089933845) q0,q1,q2; x q1; }
-gate ccry_139628910327024(param0) q0,q1,q2 { ry(-1.8206497240965724) q2; ccx q0,q1,q2; ry(1.8206497240965724) q2; ccx q0,q1,q2; }
-gate ccry_o0_139628906486976_o0(param0) q0,q1,q2 { x q0; x q1; ccry_139628910327024(-3.641299448193145) q0,q1,q2; x q0; x q1; }
-gate gate_U_A_dg q0,q1,q2,q3,q4,q5,q6,q7,q8 { h q2; h q1; cR_dg q2,q3,q4,q5,q6,q7,q8; cL_dg q1,q3,q4,q5,q6,q7,q8; ccry_o2_139628905926416_o2(-1.6521761888644535) q1,q2,q0; ccry_o1_139628906484960_o1(-2.8550994089933845) q1,q2,q0; ccry_o0_139628906486976_o0(-3.641299448193145) q1,q2,q0; h q2; h q1; }
+gate mcphase_140162333260576(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333448256(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333449264(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333457232(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333444656(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338393968(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338395744(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338392048(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338395936(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338390656(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338394352(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338398576(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338392480(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338394640(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338393776(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338393344(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338393536(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338397808(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338397280(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338397136(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338391040(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338394448(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338395888(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338397904(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162338241936(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333193264(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333188704(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333180688(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333189664(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333193744(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333195232(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333181216(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333194272(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333183280(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162332672784(param0) q0,q1 { cp(pi/32) q0,q1; }
+gate mcphase_140162332682912(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162332678544(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162332674608(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162332678928(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162332677632(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162332672880(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162332675232(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162332684160(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162333628240(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162333636688(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162333627184(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162333632080(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162333629104(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162333627664(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162333636352(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate cL q0,q1,q2,q3,q4,q5,q6 { cu(pi/2,0,pi,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162333260576(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162333448256(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_140162333449264(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162333457232(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162333444656(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_140162338393968(pi/4) q0,q6; ccx q0,q5,q6; mcphase_140162338395744(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_140162338392048(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/4,-pi/2,3*pi/4,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162338395936(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162338390656(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_140162338394352(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162338398576(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162338392480(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_140162338394640(pi/4) q0,q6; ccx q0,q5,q6; mcphase_140162338393776(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_140162338393344(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_140162338393536(pi/4) q0,q5; ccx q0,q2,q5; mcphase_140162338397808(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_140162338397280(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_140162338397136(pi/4) q0,q5; ccx q0,q4,q5; mcphase_140162338391040(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_140162338394448(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/8,-pi/2,3*pi/4,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_140162338395888(pi/4) q0,q5; ccx q0,q2,q5; mcphase_140162338397904(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_140162338241936(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_140162333193264(pi/4) q0,q5; ccx q0,q4,q5; mcphase_140162333188704(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_140162333180688(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162333189664(pi/4) q0,q4; ccx q0,q2,q4; mcphase_140162333193744(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_140162333195232(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; cu(pi/2,0,-15*pi/16,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162333181216(pi/4) q0,q4; ccx q0,q2,q4; mcphase_140162333194272(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_140162333183280(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cp(pi/32) q0,q2; ccx q0,q1,q2; cp(-pi/32) q0,q2; ccx q0,q1,q2; mcphase_140162332672784(pi/32) q0,q1; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; cu(0,-3.043417883165112,-3.0434178831651124,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; cu(pi/2,pi/8,-3*pi/4,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/32) q1; cx q0,q1; u(0,0,-pi/32) q1; cx q0,q1; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; cu(pi/2,0,pi,0) q0,q4; mcphase_140162332682912(pi/8) q0,q4; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q1,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q1,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q2,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q2,q3; mcphase_140162332678544(pi/8) q0,q2; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; mcphase_140162332674608(pi/8) q0,q1; ccx q0,q1,q2; mcphase_140162332678928(-pi/8) q0,q2; ccx q0,q1,q2; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; mcphase_140162332677632(pi/8) q0,q3; ccx q0,q2,q3; mcphase_140162332672880(-pi/8) q0,q3; ccx q0,q1,q3; mcphase_140162332675232(pi/8) q0,q3; ccx q0,q2,q3; mcphase_140162332684160(-pi/8) q0,q3; ccx q0,q1,q3; ccx q0,q3,q4; mcphase_140162333628240(-pi/8) q0,q4; ccx q0,q2,q4; mcphase_140162333636688(pi/8) q0,q4; ccx q0,q3,q4; mcphase_140162333627184(-pi/8) q0,q4; ccx q0,q1,q4; mcphase_140162333632080(pi/8) q0,q4; ccx q0,q3,q4; mcphase_140162333629104(-pi/8) q0,q4; ccx q0,q2,q4; mcphase_140162333627664(pi/8) q0,q4; ccx q0,q3,q4; cu(pi/2,0,pi,0) q0,q3; ccx q0,q2,q3; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; mcphase_140162333636352(-pi/8) q0,q4; ccx q0,q1,q4; ccx q0,q1,q3; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; ccx q0,q2,q3; u(0,0,pi/8) q2; cx q0,q2; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; ccx q0,q1,q2; u(0,0,pi/8) q1; cx q0,q1; u(0,0,-pi/8) q1; cx q0,q1; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,pi/8) q2; cx q0,q2; ccx q0,q1,q2; ccx q0,q1,q2; cx q0,q1; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,pi/4,-3*pi/4,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; p(6.1850105367549055) q0; }
+gate mcphase_140162333633184(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333625792(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333632656(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333633088(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333625888(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333625744(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333624784(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333632368(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333634528(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333637552(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333630256(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333633136(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333629392(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333626032(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333635776(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333635680(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333635584(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333628672(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333624064(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333627616(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333633472(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333623824(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162340712944(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162340714240(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162340703392(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162340700704(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162340711216(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162340715584(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162330052544(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333254240(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333251456(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333249968(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333252176(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333255584(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162333257312(param0) q0,q1 { cp(pi/32) q0,q1; }
+gate mcphase_140162340706128(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162340707712(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162340701952(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162333706464(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162333706032(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162333715344(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162333718752(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162333717408(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162333715632(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162333710688(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162333720000(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162333718080(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162333709680(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162333709728(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162333713520(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate cR q0,q1,q2,q3,q4,q5,q6 { cx q0,q1; cx q0,q2; cx q0,q3; cx q0,q4; cx q0,q5; cu(pi/2,0,pi,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162333633184(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162333625792(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_140162333632656(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162333633088(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162333625888(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_140162333625744(pi/4) q0,q6; ccx q0,q5,q6; mcphase_140162333624784(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_140162333632368(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/4,-pi/2,3*pi/4,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162333634528(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162333637552(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_140162333630256(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162333633136(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162333629392(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_140162333626032(pi/4) q0,q6; ccx q0,q5,q6; mcphase_140162333635776(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_140162333635680(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_140162333635584(pi/4) q0,q5; ccx q0,q2,q5; mcphase_140162333628672(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_140162333624064(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_140162333627616(pi/4) q0,q5; ccx q0,q4,q5; mcphase_140162333633472(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_140162333623824(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/8,-pi/2,3*pi/4,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_140162340712944(pi/4) q0,q5; ccx q0,q2,q5; mcphase_140162340714240(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_140162340703392(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_140162340700704(pi/4) q0,q5; ccx q0,q4,q5; mcphase_140162340711216(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_140162340715584(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162330052544(pi/4) q0,q4; ccx q0,q2,q4; mcphase_140162333254240(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_140162333251456(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; cu(pi/2,0,-15*pi/16,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162333249968(pi/4) q0,q4; ccx q0,q2,q4; mcphase_140162333252176(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_140162333255584(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cp(pi/32) q0,q2; ccx q0,q1,q2; cp(-pi/32) q0,q2; ccx q0,q1,q2; mcphase_140162333257312(pi/32) q0,q1; cx q0,q1; cx q0,q1; cx q0,q2; cx q0,q2; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; cx q0,q3; cx q0,q3; cu(0,-3.043417883165112,-3.0434178831651124,0) q0,q4; cx q0,q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; cu(pi/2,pi/8,-3*pi/4,0) q0,q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/32) q1; cx q0,q1; u(0,0,-pi/32) q1; cx q0,q1; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; mcphase_140162340706128(pi/8) q0,q4; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q1,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q1,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q2,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q2,q3; cx q0,q2; cx q0,q2; mcphase_140162340707712(pi/8) q0,q2; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; cx q0,q1; cx q0,q1; mcphase_140162340701952(pi/8) q0,q1; ccx q0,q1,q2; mcphase_140162333706464(-pi/8) q0,q2; ccx q0,q1,q2; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; cx q0,q3; cx q0,q3; mcphase_140162333706032(pi/8) q0,q3; ccx q0,q2,q3; mcphase_140162333715344(-pi/8) q0,q3; ccx q0,q1,q3; mcphase_140162333718752(pi/8) q0,q3; ccx q0,q2,q3; mcphase_140162333717408(-pi/8) q0,q3; ccx q0,q1,q3; ccx q0,q3,q4; mcphase_140162333715632(-pi/8) q0,q4; ccx q0,q2,q4; mcphase_140162333710688(pi/8) q0,q4; ccx q0,q3,q4; mcphase_140162333720000(-pi/8) q0,q4; ccx q0,q1,q4; mcphase_140162333718080(pi/8) q0,q4; ccx q0,q3,q4; mcphase_140162333709680(-pi/8) q0,q4; ccx q0,q2,q4; cx q0,q2; cx q0,q2; mcphase_140162333709728(pi/8) q0,q4; ccx q0,q3,q4; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; ccx q0,q2,q3; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; mcphase_140162333713520(-pi/8) q0,q4; ccx q0,q1,q4; cx q0,q1; cx q0,q1; ccx q0,q1,q3; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; ccx q0,q2,q3; u(0,0,pi/8) q2; cx q0,q2; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; ccx q0,q1,q2; u(0,0,pi/8) q1; cx q0,q1; u(0,0,-pi/8) q1; cx q0,q1; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,pi/8) q2; cx q0,q2; ccx q0,q1,q2; cx q0,q1; cx q0,q1; cx q0,q2; ccx q0,q1,q2; cx q0,q1; cx q0,q1; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,pi/4,-3*pi/4,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; p(6.185010536754906) q0; }
+gate gate_U_A q0,q1,q2,q3,q4,q5,q6,q7,q8 { h q1; h q2; ccry_o0(3.581892079706097) q1,q2,q0; ccry_o1(1.6014787120877123) q1,q2,q0; ccry_o2(2.1974215428800012) q1,q2,q0; cL q1,q3,q4,q5,q6,q7,q8; cR q2,q3,q4,q5,q6,q7,q8; h q1; h q2; }
+gate mcphase_140162336157184(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336147824(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336158000(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162336157136(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336154784(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162336154928(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336146816(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162336147248(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336154688(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162336153296(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336160304(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162336158672(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336155312(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162336156512(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336153632(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162336453344(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336456656(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336447536(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336450176(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336449648(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336451376(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336456512(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336455936(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162337815232(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162337813888(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162337811248(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162337810144(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162337803712(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162337813360(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162337814032(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162337811296(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336314880(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336310944(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336313440(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336316416(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336314208(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336309744(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336316368(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336316032(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336315792(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336893984(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336891968(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336896000(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336898496(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336895760(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336891824(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336897776(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336893264(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336895856(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162336885920(param0) q0,q1 { cp(pi/32) q0,q1; }
+gate cR_dg q0,q1,q2,q3,q4,q5,q6 { cx q0,q1; cx q0,q1; ccx q0,q1,q2; cx q0,q1; cx q0,q1; cx q0,q2; cu(pi/2,0,pi,0) q0,q3; ccx q0,q2,q3; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; ccx q0,q2,q3; u(0,0,pi/8) q2; cx q0,q2; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; ccx q0,q1,q2; u(0,0,pi/8) q1; cx q0,q1; u(0,0,-pi/8) q1; cx q0,q1; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,pi/8) q2; cx q0,q2; ccx q0,q1,q2; cx q0,q1; cx q0,q1; mcphase_140162336157184(pi/8) q0,q1; cx q0,q2; cx q0,q2; mcphase_140162336147824(pi/8) q0,q2; ccx q0,q1,q2; mcphase_140162336158000(-pi/8) q0,q2; ccx q0,q1,q2; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; cx q0,q3; mcphase_140162336157136(pi/8) q0,q3; ccx q0,q2,q3; mcphase_140162336154784(-pi/8) q0,q3; ccx q0,q1,q3; mcphase_140162336154928(pi/8) q0,q3; ccx q0,q2,q3; mcphase_140162336146816(-pi/8) q0,q3; ccx q0,q1,q3; cu(pi/2,0,pi,0) q0,q4; mcphase_140162336147248(pi/8) q0,q4; ccx q0,q3,q4; mcphase_140162336154688(-pi/8) q0,q4; ccx q0,q2,q4; mcphase_140162336153296(pi/8) q0,q4; ccx q0,q3,q4; mcphase_140162336160304(-pi/8) q0,q4; ccx q0,q1,q4; mcphase_140162336158672(pi/8) q0,q4; ccx q0,q3,q4; mcphase_140162336155312(-pi/8) q0,q4; ccx q0,q2,q4; cx q0,q2; cx q0,q2; mcphase_140162336156512(pi/8) q0,q4; ccx q0,q3,q4; cx q0,q3; cx q0,q3; mcphase_140162336153632(-pi/8) q0,q4; ccx q0,q1,q4; cx q0,q1; cx q0,q1; cu(pi/2,0,pi,0) q0,q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/32) q1; cx q0,q1; u(0,0,-pi/32) q1; cx q0,q1; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; cx q0,q4; cx q0,q4; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q1,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q1,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q2,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q2,q3; cx q0,q2; cx q0,q2; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; cx q0,q1; cx q0,q1; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; cx q0,q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162336453344(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162336456656(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_140162336447536(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162336450176(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162336449648(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_140162336451376(pi/4) q0,q6; ccx q0,q5,q6; mcphase_140162336456512(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_140162336455936(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/4,-pi/2,3*pi/4,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162337815232(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162337813888(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_140162337811248(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162337810144(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162337803712(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_140162337813360(pi/4) q0,q6; ccx q0,q5,q6; mcphase_140162337814032(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_140162337811296(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_140162336314880(pi/4) q0,q5; ccx q0,q2,q5; mcphase_140162336310944(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_140162336313440(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_140162336316416(pi/4) q0,q5; ccx q0,q4,q5; mcphase_140162336314208(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_140162336309744(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/8,-pi/2,3*pi/4,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_140162336316368(pi/4) q0,q5; ccx q0,q2,q5; mcphase_140162336316032(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_140162336315792(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_140162336893984(pi/4) q0,q5; ccx q0,q4,q5; mcphase_140162336891968(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_140162336896000(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162336898496(pi/4) q0,q4; ccx q0,q2,q4; mcphase_140162336895760(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_140162336891824(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; cu(pi/2,0,-15*pi/16,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162336897776(pi/4) q0,q4; ccx q0,q2,q4; mcphase_140162336893264(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_140162336895856(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cp(pi/32) q0,q2; ccx q0,q1,q2; cp(-pi/32) q0,q2; ccx q0,q1,q2; mcphase_140162336885920(pi/32) q0,q1; cx q0,q1; cx q0,q2; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; cx q0,q3; cu(0,-3.043417883165112,-3.0434178831651124,0) q0,q4; cx q0,q4; cu(pi/2,pi/8,-3*pi/4,0) q0,q5; cx q0,q5; cu(pi/2,pi/4,-3*pi/4,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; p(6.1850105367549055) q0; }
+gate mcphase_140162336892160(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336895280(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336896576(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162336887168(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336884528(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162336891152(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336887696(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162336882848(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336884336(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162336896192(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336894080(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162336896672(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336895520(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162336898064(param0) q0,q1 { cp(pi/8) q0,q1; }
+gate mcphase_140162336888608(param0) q0,q1 { cp(-pi/8) q0,q1; }
+gate mcphase_140162343340736(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342853968(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342850080(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342857280(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342859584(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342859200(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342850608(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342862272(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342861648(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342855456(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342856704(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342858912(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342846576(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342859344(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342851808(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342851040(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342849024(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342854016(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342848064(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342852864(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342848304(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342856656(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342849888(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342857184(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342846960(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342847776(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342856080(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342853104(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162346183184(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342658992(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342650160(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342652368(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342652752(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342653856(param0) q0,q1 { cp(pi/4) q0,q1; }
+gate mcphase_140162342658560(param0) q0,q1 { cp(pi/32) q0,q1; }
+gate cL_dg q0,q1,q2,q3,q4,q5,q6 { cx q0,q1; ccx q0,q1,q2; cu(pi/2,0,pi,0) q0,q3; ccx q0,q2,q3; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; ccx q0,q2,q3; u(0,0,pi/8) q2; cx q0,q2; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; ccx q0,q1,q2; u(0,0,pi/8) q1; cx q0,q1; u(0,0,-pi/8) q1; cx q0,q1; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,pi/8) q2; cx q0,q2; ccx q0,q1,q2; mcphase_140162336892160(pi/8) q0,q1; mcphase_140162336895280(pi/8) q0,q2; ccx q0,q1,q2; mcphase_140162336896576(-pi/8) q0,q2; ccx q0,q1,q2; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; mcphase_140162336887168(pi/8) q0,q3; ccx q0,q2,q3; mcphase_140162336884528(-pi/8) q0,q3; ccx q0,q1,q3; mcphase_140162336891152(pi/8) q0,q3; ccx q0,q2,q3; mcphase_140162336887696(-pi/8) q0,q3; ccx q0,q1,q3; cu(pi/2,0,pi,0) q0,q4; mcphase_140162336882848(pi/8) q0,q4; ccx q0,q3,q4; mcphase_140162336884336(-pi/8) q0,q4; ccx q0,q2,q4; mcphase_140162336896192(pi/8) q0,q4; ccx q0,q3,q4; mcphase_140162336894080(-pi/8) q0,q4; ccx q0,q1,q4; mcphase_140162336896672(pi/8) q0,q4; ccx q0,q3,q4; mcphase_140162336895520(-pi/8) q0,q4; ccx q0,q2,q4; mcphase_140162336898064(pi/8) q0,q4; ccx q0,q3,q4; mcphase_140162336888608(-pi/8) q0,q4; ccx q0,q1,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,0,pi,0) q0,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q4,q5; u(0,0,pi/8) q5; cx q0,q5; u(0,0,-pi/8) q5; cx q0,q5; ccx q0,q4,q5; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q2,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; ccx q0,q1,q4; u(0,0,pi/32) q1; cx q0,q1; u(0,0,-pi/32) q1; cx q0,q1; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,pi/8) q4; cx q0,q4; u(0,0,-pi/8) q4; cx q0,q4; ccx q0,q3,q4; u(0,0,-pi/8) q4; cx q0,q4; u(0,0,pi/8) q4; cx q0,q4; cu(pi/2,-2*pi,pi,0) q0,q4; u(0,0,-pi/8) q5; cx q0,q5; u(0,0,pi/8) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q1,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q1,q2; u(0,0,pi/32) q2; cx q0,q2; u(0,0,-pi/32) q2; cx q0,q2; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q2,q5; ccx q0,q2,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q2,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; ccx q0,q3,q5; ccx q0,q1,q3; u(0,0,pi/32) q3; cx q0,q3; u(0,0,-pi/32) q3; cx q0,q3; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q3,q5; u(0,0,-pi/32) q5; cx q0,q5; u(0,0,pi/32) q5; cx q0,q5; ccx q0,q3,q5; u(0,0,pi/32) q5; cx q0,q5; u(0,0,-pi/32) q5; cx q0,q5; cu(pi/2,0,pi,0) q0,q5; cu(pi/2,0,pi,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162343340736(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162342853968(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_140162342850080(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162342857280(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162342859584(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_140162342859200(pi/4) q0,q6; ccx q0,q5,q6; mcphase_140162342850608(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_140162342862272(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/4,-pi/2,3*pi/4,0) q0,q6; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162342861648(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,pi/4,-3*pi/4,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162342855456(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,-pi/4,3*pi/4,0) q0,q4; ccx q0,q3,q4; mcphase_140162342856704(pi/4) q0,q4; ccx q0,q6,q4; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; mcphase_140162342858912(pi/4) q0,q4; ccx q0,q6,q4; cu(pi/2,pi/4,-pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162342846576(pi/4) q0,q4; ccx q0,q2,q4; cu(pi/2,0,3*pi/4,0) q0,q4; cu(pi/4,pi/2,-pi/2,0) q0,q6; ccx q0,q5,q6; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; mcphase_140162342859344(pi/4) q0,q6; ccx q0,q5,q6; mcphase_140162342851808(pi/4) q0,q5; mcphase(-pi/4) q0,q6; ccx q0,q4,q6; ccx q0,q4,q5; mcphase_140162342851040(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q4,q5; cu(pi/2,0,pi,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_140162342849024(pi/4) q0,q5; ccx q0,q2,q5; mcphase_140162342854016(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_140162342848064(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_140162342852864(pi/4) q0,q5; ccx q0,q4,q5; mcphase_140162342848304(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_140162342856656(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/8,-pi/2,3*pi/4,0) q0,q5; ccx q0,q2,q5; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; mcphase_140162342849888(pi/4) q0,q5; ccx q0,q2,q5; mcphase_140162342857184(pi/4) q0,q2; mcphase(-pi/4) q0,q5; ccx q0,q1,q5; ccx q0,q1,q2; mcphase_140162342846960(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/8,pi/2,-pi/4,0) q0,q5; ccx q0,q4,q5; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; mcphase_140162342847776(pi/4) q0,q5; ccx q0,q4,q5; mcphase_140162342856080(pi/4) q0,q4; mcphase(-pi/4) q0,q5; ccx q0,q3,q5; ccx q0,q3,q4; mcphase_140162342853104(pi/4) q0,q3; mcphase(-pi/4) q0,q4; ccx q0,q3,q4; cu(pi/2,0,pi,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162346183184(pi/4) q0,q4; ccx q0,q2,q4; mcphase_140162342658992(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_140162342650160(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; cu(pi/2,0,-15*pi/16,0) q0,q4; ccx q0,q2,q4; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; mcphase_140162342652368(pi/4) q0,q4; ccx q0,q2,q4; mcphase_140162342652752(pi/4) q0,q2; mcphase(-pi/4) q0,q4; ccx q0,q1,q4; ccx q0,q1,q2; mcphase_140162342653856(pi/4) q0,q1; mcphase(-pi/4) q0,q2; ccx q0,q1,q2; cu(pi/2,-pi/16,-3*pi/4,0) q0,q4; ccx q0,q3,q4; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; ccx q0,q1,q3; cu(0,-pi/64,-pi/64,0) q0,q3; ccx q0,q2,q3; cp(pi/32) q0,q2; ccx q0,q1,q2; cp(-pi/32) q0,q2; ccx q0,q1,q2; mcphase_140162342658560(pi/32) q0,q1; cu(0,-3.0925052683774528,-3.0925052683774528,0) q0,q3; cu(0,-3.043417883165112,-3.0434178831651124,0) q0,q4; cu(pi/2,pi/8,-3*pi/4,0) q0,q5; cu(pi/2,pi/4,-3*pi/4,0) q0,q6; cu(pi/2,0,pi,0) q0,q6; p(6.1850105367549055) q0; }
+gate ccry_140162331420864(param0) q0,q1,q2 { ry(-1.0987107714400006) q2; ccx q0,q1,q2; ry(1.0987107714400006) q2; ccx q0,q1,q2; }
+gate ccry_o2_140162336894176_o2(param0) q0,q1,q2 { x q0; ccry_140162331420864(-2.1974215428800012) q0,q1,q2; x q0; }
+gate ccry_140162329712464(param0) q0,q1,q2 { ry(-0.8007393560438562) q2; ccx q0,q1,q2; ry(0.8007393560438562) q2; ccx q0,q1,q2; }
+gate ccry_o1_140162342665904_o1(param0) q0,q1,q2 { x q1; ccry_140162329712464(-1.6014787120877123) q0,q1,q2; x q1; }
+gate ccry_140162329718848(param0) q0,q1,q2 { ry(-1.7909460398530486) q2; ccx q0,q1,q2; ry(1.7909460398530486) q2; ccx q0,q1,q2; }
+gate ccry_o0_140162342652272_o0(param0) q0,q1,q2 { x q0; x q1; ccry_140162329718848(-3.581892079706097) q0,q1,q2; x q0; x q1; }
+gate gate_U_A_dg q0,q1,q2,q3,q4,q5,q6,q7,q8 { h q2; h q1; cR_dg q2,q3,q4,q5,q6,q7,q8; cL_dg q1,q3,q4,q5,q6,q7,q8; ccry_o2_140162336894176_o2(-2.1974215428800012) q1,q2,q0; ccry_o1_140162342665904_o1(-1.6014787120877123) q1,q2,q0; ccry_o0_140162342652272_o0(-3.581892079706097) q1,q2,q0; h q2; h q1; }
 qreg rot[1];
 qreg anc[3];
 qreg out[6];
 h rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(3.1011477275271218) rot[0];
+rz(6.088373114900774) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(3.7957134928982468) rot[0];
+rz(6.0523103355960925) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(5.710239940683522) rot[0];
+rz(2.2833466414403447) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.26044716117342465) rot[0];
+rz(2.1964021438892933) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(2.514836476876765) rot[0];
+rz(0.07183289285229306) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.6062910179403913) rot[0];
+rz(0.6228024441374799) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(2.371187350874911) rot[0];
+rz(4.971342205715565) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(1.6830662082146308) rot[0];
+rz(1.0357144844489123) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.9981811640301645) rot[0];
+rz(4.040483689260473) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(2.279565122785202) rot[0];
+rz(4.3867777827416905) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(4.1127117819517105) rot[0];
+rz(6.060335240283651) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.6467280709590879) rot[0];
+rz(6.108081179251223) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(2.273885286172735) rot[0];
+rz(0.8840484144263555) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.3305088523961512) rot[0];
+rz(1.77902604177196) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(6.154548552415133) rot[0];
+rz(5.290215064080032) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.042799472179890254) rot[0];
+rz(6.123419188458622) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.8595218331718634) rot[0];
+rz(3.245555764281594) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(5.882286620383598) rot[0];
+rz(4.667767082340849) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(2.3165748883309787) rot[0];
+rz(5.495345397322531) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.23318780277785192) rot[0];
+rz(1.1648826203238793) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(2.274037183455069) rot[0];
+rz(2.3121216138826806) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(3.2925234141839343) rot[0];
+rz(6.026663522163965) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.8499471884964808) rot[0];
+rz(3.513009792616131) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(1.7868628162051738) rot[0];
+rz(2.259248998155213) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.5047325851481798) rot[0];
+rz(3.450544101374294) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(2.165086726826336) rot[0];
+rz(0.0048865187094484916) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(1.0519519710205858) rot[0];
+rz(5.102178591608031) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(3.0204019102195385) rot[0];
+rz(0.8773932285360481) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(3.4937229040299296) rot[0];
+rz(5.559336762359708) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(3.1488617119544866) rot[0];
+rz(4.863326183812799) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2],out[3],out[4],out[5];
 h rot[0];

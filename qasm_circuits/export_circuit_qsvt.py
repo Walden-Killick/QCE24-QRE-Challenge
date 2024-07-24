@@ -1,4 +1,4 @@
-"""Script for exporting circuits as QASM text files.
+"""Script for exporting QSVT circuits as QASM text files.
 
 Cambridge Consultants 2024\
 Walden Killick
@@ -15,7 +15,7 @@ from qce24_qre_challenge.circuit import QSVT, BlockEncoding
 from qce24_qre_challenge.quantum_oracle import BandedCirculantOracle
 from qce24_qre_challenge.sparse_matrix import BandedCirculantMatrix
 
-MATRIX_SIZES = [4, 8, 16, 32, 64, 128, 256]
+MATRIX_SIZES = [4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048]
 KAPPA = 3
 EPSILON = 0.1
 

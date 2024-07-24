@@ -1,148 +1,148 @@
 OPENQASM 2.0;
 include "qelib1.inc";
 gate mcx q0,q1,q2,q3 { h q3; p(pi/8) q0; p(pi/8) q1; p(pi/8) q2; p(pi/8) q3; cx q0,q1; p(-pi/8) q1; cx q0,q1; cx q1,q2; p(-pi/8) q2; cx q0,q2; p(pi/8) q2; cx q1,q2; p(-pi/8) q2; cx q0,q2; cx q2,q3; p(-pi/8) q3; cx q1,q3; p(pi/8) q3; cx q2,q3; p(-pi/8) q3; cx q0,q3; p(pi/8) q3; cx q2,q3; p(-pi/8) q3; cx q1,q3; p(pi/8) q3; cx q2,q3; p(-pi/8) q3; cx q0,q3; h q3; }
-gate mcx_139628914671776 q0,q1,q2,q3 { mcx q0,q1,q2,q3; }
-gate mcx_o0 q0,q1,q2,q3 { x q0; x q1; x q2; mcx_139628914671776 q0,q1,q2,q3; x q0; x q1; x q2; }
-gate ccry(param0) q0,q1,q2 { ry(1.7102418092654514) q2; ccx q0,q1,q2; ry(-1.7102418092654514) q2; ccx q0,q1,q2; }
-gate ccry_o0(param0) q0,q1,q2 { x q0; x q1; ccry(3.420483618530903) q0,q1,q2; x q0; x q1; }
-gate ccry_139628914526288(param0) q0,q1,q2 { ry(1.3369800466804287) q2; ccx q0,q1,q2; ry(-1.3369800466804287) q2; ccx q0,q1,q2; }
-gate ccry_o1(param0) q0,q1,q2 { x q1; ccry_139628914526288(2.6739600933608574) q0,q1,q2; x q1; }
-gate ccry_139628914532288(param0) q0,q1,q2 { ry(1.3406694164174475) q2; ccx q0,q1,q2; ry(-1.3406694164174475) q2; ccx q0,q1,q2; }
-gate ccry_o2(param0) q0,q1,q2 { x q0; ccry_139628914532288(2.681338832834895) q0,q1,q2; x q0; }
+gate mcx_140162343236320 q0,q1,q2,q3 { mcx q0,q1,q2,q3; }
+gate mcx_o0 q0,q1,q2,q3 { x q0; x q1; x q2; mcx_140162343236320 q0,q1,q2,q3; x q0; x q1; x q2; }
+gate ccry(param0) q0,q1,q2 { ry(1.6070951489111356) q2; ccx q0,q1,q2; ry(-1.6070951489111356) q2; ccx q0,q1,q2; }
+gate ccry_o0(param0) q0,q1,q2 { x q0; x q1; ccry(3.214190297822271) q0,q1,q2; x q0; x q1; }
+gate ccry_140162342951120(param0) q0,q1,q2 { ry(1.546030460921042) q2; ccx q0,q1,q2; ry(-1.546030460921042) q2; ccx q0,q1,q2; }
+gate ccry_o1(param0) q0,q1,q2 { x q1; ccry_140162342951120(3.092060921842084) q0,q1,q2; x q1; }
+gate ccry_140162342945744(param0) q0,q1,q2 { ry(0.9361638291389283) q2; ccx q0,q1,q2; ry(-0.9361638291389283) q2; ccx q0,q1,q2; }
+gate ccry_o2(param0) q0,q1,q2 { x q0; ccry_140162342945744(1.8723276582778565) q0,q1,q2; x q0; }
 gate cL q0,q1,q2,q3 { cu(pi/2,0,pi,0) q0,q3; ccx q0,q2,q3; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; ccx q0,q2,q3; u(0,0,pi/8) q2; cx q0,q2; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; ccx q0,q1,q2; u(0,0,pi/8) q1; cx q0,q1; u(0,0,-pi/8) q1; cx q0,q1; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,pi/8) q2; cx q0,q2; ccx q0,q1,q2; ccx q0,q1,q2; cx q0,q1; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; p(pi/8) q0; }
 gate cR q0,q1,q2,q3 { cx q0,q1; cx q0,q2; cu(pi/2,0,pi,0) q0,q3; ccx q0,q2,q3; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; ccx q0,q2,q3; u(0,0,pi/8) q2; cx q0,q2; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; ccx q0,q1,q2; u(0,0,pi/8) q1; cx q0,q1; u(0,0,-pi/8) q1; cx q0,q1; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,pi/8) q2; cx q0,q2; ccx q0,q1,q2; cx q0,q1; cx q0,q1; cx q0,q2; ccx q0,q1,q2; cx q0,q1; cx q0,q1; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; p(pi/8) q0; }
-gate gate_U_A q0,q1,q2,q3,q4,q5 { h q1; h q2; ccry_o0(3.420483618530903) q1,q2,q0; ccry_o1(2.6739600933608574) q1,q2,q0; ccry_o2(2.681338832834895) q1,q2,q0; cL q1,q3,q4,q5; cR q2,q3,q4,q5; h q1; h q2; }
+gate gate_U_A q0,q1,q2,q3,q4,q5 { h q1; h q2; ccry_o0(3.214190297822271) q1,q2,q0; ccry_o1(3.092060921842084) q1,q2,q0; ccry_o2(1.8723276582778565) q1,q2,q0; cL q1,q3,q4,q5; cR q2,q3,q4,q5; h q1; h q2; }
 gate cR_dg q0,q1,q2,q3 { cx q0,q1; cx q0,q1; ccx q0,q1,q2; cx q0,q1; cx q0,q1; cx q0,q2; cu(pi/2,0,pi,0) q0,q3; ccx q0,q2,q3; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; ccx q0,q2,q3; u(0,0,pi/8) q2; cx q0,q2; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; ccx q0,q1,q2; u(0,0,pi/8) q1; cx q0,q1; u(0,0,-pi/8) q1; cx q0,q1; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,pi/8) q2; cx q0,q2; ccx q0,q1,q2; cx q0,q1; cx q0,q2; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; p(pi/8) q0; }
 gate cL_dg q0,q1,q2,q3 { cx q0,q1; ccx q0,q1,q2; cu(pi/2,0,pi,0) q0,q3; ccx q0,q2,q3; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; ccx q0,q2,q3; u(0,0,pi/8) q2; cx q0,q2; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; ccx q0,q1,q2; u(0,0,pi/8) q1; cx q0,q1; u(0,0,-pi/8) q1; cx q0,q1; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,pi/8) q2; cx q0,q2; ccx q0,q1,q2; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; p(pi/8) q0; }
-gate ccry_139628917406832(param0) q0,q1,q2 { ry(-1.3406694164174475) q2; ccx q0,q1,q2; ry(1.3406694164174475) q2; ccx q0,q1,q2; }
-gate ccry_o2_139628914526864_o2(param0) q0,q1,q2 { x q0; ccry_139628917406832(-2.681338832834895) q0,q1,q2; x q0; }
-gate ccry_139628916353168(param0) q0,q1,q2 { ry(-1.3369800466804287) q2; ccx q0,q1,q2; ry(1.3369800466804287) q2; ccx q0,q1,q2; }
-gate ccry_o1_139628916408528_o1(param0) q0,q1,q2 { x q1; ccry_139628916353168(-2.6739600933608574) q0,q1,q2; x q1; }
-gate ccry_139628916359024(param0) q0,q1,q2 { ry(-1.7102418092654514) q2; ccx q0,q1,q2; ry(1.7102418092654514) q2; ccx q0,q1,q2; }
-gate ccry_o0_139628916417840_o0(param0) q0,q1,q2 { x q0; x q1; ccry_139628916359024(-3.420483618530903) q0,q1,q2; x q0; x q1; }
-gate gate_U_A_dg q0,q1,q2,q3,q4,q5 { h q2; h q1; cR_dg q2,q3,q4,q5; cL_dg q1,q3,q4,q5; ccry_o2_139628914526864_o2(-2.681338832834895) q1,q2,q0; ccry_o1_139628916408528_o1(-2.6739600933608574) q1,q2,q0; ccry_o0_139628916417840_o0(-3.420483618530903) q1,q2,q0; h q2; h q1; }
+gate ccry_140162343034768(param0) q0,q1,q2 { ry(-0.9361638291389283) q2; ccx q0,q1,q2; ry(0.9361638291389283) q2; ccx q0,q1,q2; }
+gate ccry_o2_140162343924592_o2(param0) q0,q1,q2 { x q0; ccry_140162343034768(-1.8723276582778565) q0,q1,q2; x q0; }
+gate ccry_140162343157824(param0) q0,q1,q2 { ry(-1.546030460921042) q2; ccx q0,q1,q2; ry(1.546030460921042) q2; ccx q0,q1,q2; }
+gate ccry_o1_140162342718144_o1(param0) q0,q1,q2 { x q1; ccry_140162343157824(-3.092060921842084) q0,q1,q2; x q1; }
+gate ccry_140162343158736(param0) q0,q1,q2 { ry(-1.6070951489111356) q2; ccx q0,q1,q2; ry(1.6070951489111356) q2; ccx q0,q1,q2; }
+gate ccry_o0_140162343031744_o0(param0) q0,q1,q2 { x q0; x q1; ccry_140162343158736(-3.214190297822271) q0,q1,q2; x q0; x q1; }
+gate gate_U_A_dg q0,q1,q2,q3,q4,q5 { h q2; h q1; cR_dg q2,q3,q4,q5; cL_dg q1,q3,q4,q5; ccry_o2_140162343924592_o2(-1.8723276582778565) q1,q2,q0; ccry_o1_140162342718144_o1(-3.092060921842084) q1,q2,q0; ccry_o0_140162343031744_o0(-3.214190297822271) q1,q2,q0; h q2; h q1; }
 qreg rot[1];
 qreg anc[3];
 qreg out[3];
 h rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(3.1011477275271218) rot[0];
+rz(6.088373114900774) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(3.7957134928982468) rot[0];
+rz(6.0523103355960925) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(5.710239940683522) rot[0];
+rz(2.2833466414403447) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.26044716117342465) rot[0];
+rz(2.1964021438892933) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(2.514836476876765) rot[0];
+rz(0.07183289285229306) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.6062910179403913) rot[0];
+rz(0.6228024441374799) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(2.371187350874911) rot[0];
+rz(4.971342205715565) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(1.6830662082146308) rot[0];
+rz(1.0357144844489123) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.9981811640301645) rot[0];
+rz(4.040483689260473) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(2.279565122785202) rot[0];
+rz(4.3867777827416905) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(4.1127117819517105) rot[0];
+rz(6.060335240283651) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.6467280709590879) rot[0];
+rz(6.108081179251223) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(2.273885286172735) rot[0];
+rz(0.8840484144263555) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.3305088523961512) rot[0];
+rz(1.77902604177196) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(6.154548552415133) rot[0];
+rz(5.290215064080032) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.042799472179890254) rot[0];
+rz(6.123419188458622) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.8595218331718634) rot[0];
+rz(3.245555764281594) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(5.882286620383598) rot[0];
+rz(4.667767082340849) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(2.3165748883309787) rot[0];
+rz(5.495345397322531) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.23318780277785192) rot[0];
+rz(1.1648826203238793) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(2.274037183455069) rot[0];
+rz(2.3121216138826806) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(3.2925234141839343) rot[0];
+rz(6.026663522163965) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.8499471884964808) rot[0];
+rz(3.513009792616131) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(1.7868628162051738) rot[0];
+rz(2.259248998155213) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(0.5047325851481798) rot[0];
+rz(3.450544101374294) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(2.165086726826336) rot[0];
+rz(0.0048865187094484916) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(1.0519519710205858) rot[0];
+rz(5.102178591608031) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(3.0204019102195385) rot[0];
+rz(0.8773932285360481) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(3.4937229040299296) rot[0];
+rz(5.559336762359708) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A anc[0],anc[1],anc[2],out[0],out[1],out[2];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
-rz(3.1488617119544866) rot[0];
+rz(4.863326183812799) rot[0];
 mcx_o0 anc[2],anc[1],anc[0],rot[0];
 gate_U_A_dg anc[0],anc[1],anc[2],out[0],out[1],out[2];
 h rot[0];
