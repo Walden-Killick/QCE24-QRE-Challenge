@@ -1,0 +1,22 @@
+OPENQASM 2.0;
+include "qelib1.inc";
+gate ccry(param0) q0,q1,q2 { ry(2.462905128330846) q2; ccx q0,q1,q2; ry(-2.462905128330846) q2; ccx q0,q1,q2; }
+gate ccry_o0(param0) q0,q1,q2 { x q0; x q1; ccry(4.925810256661692) q0,q1,q2; x q0; x q1; }
+gate ccry_140144657517584(param0) q0,q1,q2 { ry(1.0329758582532633) q2; ccx q0,q1,q2; ry(-1.0329758582532633) q2; ccx q0,q1,q2; }
+gate ccry_o1(param0) q0,q1,q2 { x q1; ccry_140144657517584(2.0659517165065266) q0,q1,q2; x q1; }
+gate ccry_140144657518448(param0) q0,q1,q2 { ry(1.3319798411845782) q2; ccx q0,q1,q2; ry(-1.3319798411845782) q2; ccx q0,q1,q2; }
+gate ccry_o2(param0) q0,q1,q2 { x q0; ccry_140144657518448(2.6639596823691565) q0,q1,q2; x q0; }
+gate cL q0,q1,q2,q3 { cu(pi/2,0,pi,0) q0,q3; ccx q0,q2,q3; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; ccx q0,q2,q3; u(0,0,pi/8) q2; cx q0,q2; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; ccx q0,q1,q2; u(0,0,pi/8) q1; cx q0,q1; u(0,0,-pi/8) q1; cx q0,q1; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,pi/8) q2; cx q0,q2; ccx q0,q1,q2; ccx q0,q1,q2; cx q0,q1; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; p(pi/8) q0; }
+gate cR q0,q1,q2,q3 { cx q0,q1; cx q0,q2; cu(pi/2,0,pi,0) q0,q3; ccx q0,q2,q3; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; ccx q0,q2,q3; u(0,0,pi/8) q2; cx q0,q2; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,-pi/8) q3; cx q0,q3; u(0,0,pi/8) q3; cx q0,q3; ccx q0,q1,q3; ccx q0,q1,q2; u(0,0,pi/8) q1; cx q0,q1; u(0,0,-pi/8) q1; cx q0,q1; u(0,0,-pi/8) q2; cx q0,q2; u(0,0,pi/8) q2; cx q0,q2; ccx q0,q1,q2; cx q0,q1; cx q0,q1; cx q0,q2; ccx q0,q1,q2; cx q0,q1; cx q0,q1; u(0,0,pi/8) q3; cx q0,q3; u(0,0,-pi/8) q3; cx q0,q3; cu(pi/2,0,pi,0) q0,q3; p(pi/8) q0; }
+qreg val[1];
+qreg ctrl[2];
+qreg out[3];
+h ctrl[0];
+h ctrl[1];
+ccry_o0(4.925810256661692) ctrl[0],ctrl[1],val[0];
+ccry_o1(2.0659517165065266) ctrl[0],ctrl[1],val[0];
+ccry_o2(2.6639596823691565) ctrl[0],ctrl[1],val[0];
+cL ctrl[0],out[0],out[1],out[2];
+cR ctrl[1],out[0],out[1],out[2];
+h ctrl[0];
+h ctrl[1];
