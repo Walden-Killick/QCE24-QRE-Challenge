@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.21)  23 JUL 2024 17:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.21)  25 JUL 2024 13:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1284,37 +1284,61 @@ Package biblatex Info: Reference segment=0 on input line 46.
 
 
 ]
-Underfull \hbox (badness 1609) in paragraph at lines 127--128
+Underfull \hbox (badness 1609) in paragraph at lines 128--129
 []\OT1/cmr/m/n/10 Reference [[]7[]] shows how to con-struct polynomial-size
  []
 
 
-Underfull \hbox (badness 6493) in paragraph at lines 166--167
+Underfull \vbox (badness 4072) has occurred while \output is active []
+
+
+Underfull \hbox (badness 6493) in paragraph at lines 167--168
 []\OT1/cmr/m/n/10 The log-a-rith-mic best-fit func-tions, com-puted us-ing
  []
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
 [2]
-Underfull \hbox (badness 1127) in paragraph at lines 228--228
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--217
+\OT1/cmr/m/n/10 which in-deed con-forms to the dataset with a
+ []
+
+
+Underfull \hbox (badness 2253) in paragraph at lines 215--217
+\OT1/cmr/m/n/10 smaller av-er-age er-ror than the lin-ear fit. To fur-
+ []
+
+
+Underfull \hbox (badness 1348) in paragraph at lines 215--217
+\OT1/cmr/m/n/10 ther jus-tify fit-ting to this func-tion, in the note-book
+ []
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 218--219
+\OT1/cmr/m/n/10 ac-cu-rate, with this im-ple-men-ta-tion a $10[]$-dimensional
+ []
+
+
+Underfull \hbox (badness 1127) in paragraph at lines 231--231
 []\OT1/cmr/m/n/10 A Yu Ki-taev. ``Quan-tum mea-sure-ments and the
  []
 
 
-Underfull \hbox (badness 2261) in paragraph at lines 228--228
+Underfull \hbox (badness 2261) in paragraph at lines 231--231
 \OT1/cmr/m/n/10 Hamil-to-nian sim-u-la-tion by quan-tum sig-nal pro-
  []
 
 
-Underfull \hbox (badness 1968) in paragraph at lines 228--228
+Underfull \hbox (badness 1968) in paragraph at lines 231--231
 \OT1/cmr/m/n/10 gu-lar Value Trans-for-ma-tion''. In: \OT1/cmr/m/it/10 arXiv pr
 eprint
  []
 
 
-Underfull \hbox (badness 4752) in paragraph at lines 228--228
+Underfull \hbox (badness 4752) in paragraph at lines 231--231
 []\OT1/cmr/m/n/10 Baptiste Claudon et al. ``Polylogarithmic-depth
  []
 
@@ -1328,11 +1352,11 @@ Package logreq Info: Writing requests to '"QCE24 QRE Challenge Report".run.xml'
 
  ) 
 Here is how much of TeX's memory you used:
- 44577 strings out of 478287
- 1018289 string characters out of 5849289
- 1877029 words of memory out of 5000000
- 62069 multiletter control sequences out of 15000+600000
- 478758 words of font info for 67 fonts, out of 8000000 for 9000
+ 44582 strings out of 478287
+ 1018340 string characters out of 5849289
+ 1869029 words of memory out of 5000000
+ 62071 multiletter control sequences out of 15000+600000
+ 479457 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,19n,89p,1196b,2342s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
@@ -1341,16 +1365,21 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "QCE24 QRE Challenge Report.pdf" (3 pages, 208597 bytes).
+ts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on "QCE24 QRE Challenge Report.pdf" (3 pages, 257574 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
+ 219 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 500000)
  85 words of extra memory for PDF output out of 10000 (max. 10000000)
 
