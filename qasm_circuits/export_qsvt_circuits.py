@@ -47,5 +47,5 @@ for matrix_size in MATRIX_SIZES:
     filepath = str(Path(__file__).resolve().parent)
     filename = f"qsvt_{matrix_size}_{EPSILON}"
 
-    with open(filepath + "/" + filename, "w") as file:
+    with open(filepath + "/qsvt_circuits/" + filename, "w") as file:
         file.write(qasm_circuit)

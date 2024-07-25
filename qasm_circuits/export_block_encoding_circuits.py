@@ -27,5 +27,5 @@ for matrix_size in MATRIX_SIZES:
     filepath = str(Path(__file__).resolve().parent)
     filename = f"block_encoding_{matrix_size}"
 
-    with open(filepath + "/" + filename, "w") as file:
+    with open(filepath + "/block_encoding_circuits/" + filename, "w") as file:
         file.write(qasm_circuit)
