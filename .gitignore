@@ -1,1 +1,23 @@
 __pycache__/
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# .tex files
+*.gz
+*.aux
+*.blg
+*.bbl
+*.log
+*.out
+*.bcf
+*.run.xml
+*.fls
+*.loc
+*.soc
+*.fdb_latexmk
+*.upa
+*.upb
