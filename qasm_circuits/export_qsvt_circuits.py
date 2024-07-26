@@ -1,6 +1,6 @@
 """Script for exporting QSVT circuits as QASM text files.
 
-Cambridge Consultants 2024\
+Cambridge Consultants 2024
 Walden Killick
 """
 
@@ -45,7 +45,7 @@ for matrix_size in MATRIX_SIZES:
     qasm_circuit = qasm2.dumps(qsvt_circuit)
 
     filepath = str(Path(__file__).resolve().parent)
-    filename = f"qsvt_{matrix_size}_{EPSILON}"
+    filename = f"qsvt_{matrix_size}"
 
     with open(filepath + "/qsvt_circuits/" + filename, "w") as file:
         file.write(qasm_circuit)
