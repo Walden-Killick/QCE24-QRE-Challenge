@@ -16,7 +16,7 @@ class BandedCirculantMatrix(SparseMatrix):
     https://doi.org/10.1137/22M1484298.
     """
 
-    def __init__(self, size: int, coefficients: list[float] = None) -> None:
+    def __init__(self, size: int, coefficients: list[float] | None = None) -> None:
         """Initialise the 'BandedCirculantMatrix'.
 
         Parameters
@@ -34,17 +34,18 @@ class BandedCirculantMatrix(SparseMatrix):
             If the size is less than three or the number of coefficients given is not
             exactly three.
         """
-        if size < 3:
-            raise ValueError(f"Size argument ({size}) must be at least 3.")
-        if coefficients is not None:
-            self._coefficients = coefficients
-        else:
-            self._coefficients = [1 - np.random.uniform(0, 1) for _ in range(3)]
-        if len(self.coefficients) != 3:
+        if coefficients is None:
+            coefficients = [1 - np.random.uniform(0, 1) for _ in range(3)]
+
+        if len(coefficients) != 3:
             raise ValueError(
                 "The number of coefficients to initialise a banded circulant "
                 + f"matrix must be exactly 3. {len(self.coefficients)} were given."
             )
+        if size < 3:
+            raise ValueError(f"Size argument ({size}) must be at least 3.")
+
+        self._coefficients = coefficients
         self._size = size
         self._sparsity = 3
 
