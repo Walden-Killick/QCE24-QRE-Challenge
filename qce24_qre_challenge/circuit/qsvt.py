@@ -92,19 +92,16 @@ class QSVT(Circuit):
 
         qsvt_circuit.h(processing_reg)
 
-        parity = 0
-        for angle in self._phase_angles:
+        for angle in self._phase_angles[:-1]:
             qsvt_circuit.compose(
                 signal_processing_circuit(angle, num_ancillas), inplace=True
             )
-            if parity == 0:
-                qsvt_circuit.append(block_encoding_gate, range(1, total_qubits))
-                parity = 1
-            else:
-                qsvt_circuit.append(
-                    block_encoding_gate.inverse(), range(1, total_qubits)
-                )
-                parity = 0
+            qsvt_circuit.append(block_encoding_gate, range(1, total_qubits))
+        qsvt_circuit.compose(
+            signal_processing_circuit(self._phase_angles[-1], num_ancillas),
+            inplace=True,
+        )
+
         qsvt_circuit.h(0)
 
         return qsvt_circuit
