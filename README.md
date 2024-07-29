@@ -1,5 +1,5 @@
 # QCE24-QRE-Challenge
-Resource estimation for matrix inversion by QSVT.
+Resource estimation for matrix inversion by QSVT. (Submission for the [QCE’24 QRE Challenge](https://sites.google.com/view/qce2024-qre-workshops/qre-challenge).)
 
 The main report can be found at [LaTeX/QCE24 QRE Challenge Report.pdf](https://github.com/Walden-Killick/QCE24-QRE-Challenge/blob/main/LaTeX/QCE24%20QRE%20Challenge%20Report.pdf).
 
