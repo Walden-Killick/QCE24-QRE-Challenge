@@ -1,0 +1,16 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: QCE'24 QRE Challenge Submission - Matrix Inversion by QSVT
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Walden
+    family-names: Killick
+    affiliation: Cambridge Consultants
+repository-code: 'https://github.com/Walden-Killick/QCE24-QRE-Challenge'
+abstract: Quantum resource estimation for matrix inversion by QSVT.
+license: MIT
